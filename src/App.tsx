@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './app.scss';
+import './styles.scss';
 import Header from '@components/Header/Header.tsx';
 
 
