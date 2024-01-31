@@ -1,16 +1,11 @@
-import {useState} from 'react';
-import './styles.scss';
-import Header from '@components/Header/Header.tsx';
+import React from 'react';
+import {RouterProvider} from 'react-router-dom';
+import {rootRouter} from './routes/routes.tsx';
 
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <Header/>
-      <main>some</main>
-    </>
+    <RouterProvider router={rootRouter}/>
   );
 }
 
