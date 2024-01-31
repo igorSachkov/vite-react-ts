@@ -1,10 +1,11 @@
 import {ActionFunctionArgs, Form, redirect, useActionData} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import {IDeniedRequestResult, RequestResult} from '@models/auth-models.ts';
+import {TextField} from '@mui/material';
 
 
 const authFormKeys = {
-  name: 'name',
+  login: 'login',
   password: 'password'
 };
 
@@ -12,7 +13,7 @@ export const AuthAction = async ({request}: ActionFunctionArgs) => {
   const data: FormData = await request.formData();
 
   const formData =  {
-    name: data.get(authFormKeys.name),
+    name: data.get(authFormKeys.login),
     password: data.get(authFormKeys.password)
   };
 
@@ -43,13 +44,9 @@ const AuthPage = () => {
     <div style={{width: '100%', height: '100%'}}>
       <h1 style={{textAlign: 'center', margin: '4rem 0'}}>Авторизация</h1>
       <Form method="post" action="/auth" style={{margin: '1rem'}} onSubmit={() => setIsFormDisabled(true)}>
-        <label htmlFor={authFormKeys.name}>Name</label>
-        <input style={{width: '100%'}} name={authFormKeys.name} type="text" disabled={isFormDisabled}/>
+        <TextField name={authFormKeys.login} id="login" label="Логин" variant="outlined" sx={{display: 'block'}}/>
 
-        <hr/>
-
-        <label htmlFor={authFormKeys.password}>Password</label>
-        <input style={{width: '100%', marginBottom: '1rem'}} name={authFormKeys.password} type="text" disabled={isFormDisabled}/>
+        <TextField name={authFormKeys.password} id="password" label="Пароль" variant="outlined" sx={{display: 'block'}}/>
 
         {(actionData && !actionData.isSuccess) && <p>{actionData.errorMessage}</p>}
 
