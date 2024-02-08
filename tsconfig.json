@@ -23,6 +23,7 @@
     "paths": {
       "@pages/*": ["./src/pages/*"],
       "@models/*": ["./src/models/*"],
+      "@shared/*": ["./src/shared/*"],
     }
   },
   "include": ["src"],

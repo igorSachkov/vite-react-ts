@@ -1,7 +1,9 @@
 import {createBrowserRouter, redirect} from 'react-router-dom';
-import React from 'react';
+
 import MainPage from '@pages/MainPage/MainPage.tsx';
 import AuthPage, {AuthAction} from '@pages/AuthPage/AuthPage.tsx';
+import React from 'react';
+import {TaskLandingPage} from '@pages/TaskLandingPage/TaskLandingPage.tsx';
 
 export const rootRouter = createBrowserRouter([
   {
@@ -13,6 +15,10 @@ export const rootRouter = createBrowserRouter([
     path: '/auth',
     element: <AuthPage/>,
     action: AuthAction
+  },
+  {
+    path: '/second-task',
+    element: <TaskLandingPage/>
   }
 ]);
 

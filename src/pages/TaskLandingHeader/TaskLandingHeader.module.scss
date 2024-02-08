@@ -1,0 +1,43 @@
+.logoIcon {
+  margin-right: .9rem;
+}
+
+.header {
+
+}
+
+.headerContainer {
+  gap: 8.5rem;
+  margin-top: 4.75rem;
+  margin-bottom: 2.8rem;
+}
+
+.logoTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6C5FBC;
+}
+
+.headerLink {
+  text-decoration: none;
+  color: #606060;
+}
+
+.nav {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  gap: 4.4rem;
+
+  a {
+    padding-left: 0.1rem;
+  }
+}
+
+.divider {
+  border-bottom: grey 1px solid;
+  margin: 0 2px;
+}
+
+
