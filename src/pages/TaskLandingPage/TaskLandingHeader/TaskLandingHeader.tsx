@@ -1,4 +1,4 @@
-import logo from '@shared/images/Logo.png';
+import logo from '@assets/Logo.png';
 import style from './TaskLandingHeader.module.scss';
 import {NavLink} from 'react-router-dom';
 
@@ -10,7 +10,7 @@ export const TaskLandingHeader = () => {
         <div className='d-flex'>
           <img src={logo} alt="Restaurant logo" className={style.logoIcon}/>
           <div className="d-flex align-items-center">
-            <span className={style.logoTitle}>eatly</span>
+            <span className={`poppins-400 ${style.logoTitle}`}>eatly</span>
           </div>
         </div>
 

@@ -1,14 +1,15 @@
-import {TaskLandingHeader} from '@pages/TaskLandingHeader/TaskLandingHeader.tsx';
-import {TaskLandingMain} from '@pages/TaskLandingMain/TaskLandingMain.tsx';
+import {TaskLandingHeader} from '@pages/TaskLandingPage/TaskLandingHeader/TaskLandingHeader.tsx';
+import {TaskLandingMain} from '@pages/TaskLandingPage/TaskLandingMain/TaskLandingMain.tsx';
+
 
 export const TaskLandingPage = () => {
   return (
-    <>
+    <div style={{overflowY: 'scroll'}}>
       <TaskLandingHeader/>
-      <TaskLandingMain/>
-      <main>
 
+      <main>
+        <TaskLandingMain/>
       </main>
-    </>
+    </div>
   );
 };
