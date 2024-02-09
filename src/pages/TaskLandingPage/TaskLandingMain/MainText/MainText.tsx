@@ -10,7 +10,7 @@ export const MainText = () => {
         <span className={`poppins-600 ${style.subtitle}`}>OVER 1000 USERS</span>
       </div>
 
-      <h1 className={`poppins-600 ${style.mainTitle}`}>Enjoy Foods All Over The <span style={{color: '#5C4EAE'}}>World</span></h1>
+      <h1 className={`poppins-600 ${style.mainTitle}`}>Enjoy Foods All Over The <span className={style.secondary}>World</span></h1>
       <p className={style.mainText}>EatLy help you set saving goals, earn cash back offers, Go to disclaimer for more details and get paychecks up to two days early. Get a <span style={{color: '#6155AE'}}>$20 bonus</span>.</p>
 
       <div className={`d-flex ${style.buttonContainer}`}>
