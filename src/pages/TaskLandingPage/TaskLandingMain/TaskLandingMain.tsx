@@ -4,7 +4,7 @@ import {MainImage} from '@pages/TaskLandingPage/TaskLandingMain/MainImage/MainIm
 
 export const TaskLandingMain = () => {
   return (
-    <section className={'d-flex container-lg'}>
+    <section className={'d-flex container'}>
       <div style={{width: '50%'}}>
         <MainText></MainText>
       </div>

@@ -83,10 +83,6 @@ body {
   margin-right: auto;
   margin-left: auto;
 
-  &-lg {
-    margin-right: auto;
-    margin-left: auto;
-  }
 }
 
 @media (min-width: 576px) {
@@ -113,7 +109,5 @@ body {
   .container {
     max-width: 1668px;
   }
-  .container-lg {
-    max-width: 1766px;
-  }
+
 }

@@ -1,0 +1,46 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.leftIllustration {
+  position: absolute;
+  width: 52px;
+  bottom: 13px;
+  left: -26px;
+}
+
+.rightIllustration {
+  position: absolute;
+  width: 55px;
+  top: 54px;
+  right: -47px;
+}
+
+.mainImgContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mainImg {
+  width: 81%;
+  position: absolute;
+  top: 176px;
+  left: 122px;
+}
+
+.graphicImg {
+  position: absolute;
+  width: 45%;
+  bottom: -10px;
+  left: -8px;
+}
+
+.commentImg {
+  position: absolute;
+  width: 62%;
+  top: 88px;
+  right: -28px;
+}
