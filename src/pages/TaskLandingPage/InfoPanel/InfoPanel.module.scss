@@ -2,13 +2,20 @@
 
 .infoItemContainer {
   padding-top: 5rem;
-  padding-bottom: 4.3rem;
+  padding-bottom: 4.2rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 32vh;
 
+  div:not(:last-child) {
+    border-right: 1px solid grey;
+  }
 }
 
 .infoPanel {
   width: 100%;
-  background-color: $secondary-color;
+  // Понимание есть, что можно сделать bg-color и кривыми Безье, а вот времени и навыка- нет.
+  background: center / contain no-repeat $secondary-color url("src/assets/infoPanelBG.png");
 }
 
 .divider {
@@ -24,4 +31,13 @@
   text-align: center;
   margin: 0;
   margin-bottom: .3rem;
+}
+
+.bezier4 {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  transition: all 1s cubic-bezier(0, 0.9, 0.27, 0.99);
+  width: 2px;
+  background-color: red;
 }

@@ -10,7 +10,9 @@ export const TaskLandingPage = () => {
 
       <main>
         <TaskLandingMain/>
-        <InfoPanel/>
+        <div style={{marginTop: '6.5rem'}}>
+          <InfoPanel/>
+        </div>
       </main>
     </>
   );
