@@ -2,7 +2,7 @@ import {TaskLandingHeader} from '@pages/TaskLandingPage/TaskLandingHeader/TaskLa
 import {TaskLandingMain} from '@pages/TaskLandingPage/TaskLandingMain/TaskLandingMain.tsx';
 import {InfoPanel} from '@pages/TaskLandingPage/InfoPanel/InfoPanel.tsx';
 import {DownloadAppSection} from '@pages/TaskLandingPage/DownloadAppSection/DownloadAppSection.tsx';
-
+import style from './TaskLandingPage.module.scss';
 
 export const TaskLandingPage = () => {
   return (
@@ -14,8 +14,11 @@ export const TaskLandingPage = () => {
         <div style={{marginTop: '6.5rem'}}>
           <InfoPanel/>
         </div>
-        <div>
+        <div style={{marginTop: '9rem'}}>
           <DownloadAppSection/>
+        </div>
+        <div className='container' style={{marginTop: '9.4rem'}}>
+          <div className={style.divider}></div>
         </div>
       </main>
     </>
