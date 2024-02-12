@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+
+.sectionContainer {
+  padding-top: 12.6rem;
+  padding-left: 6.6rem;
+  padding-bottom: 6rem;
+
+  h2 {
+    font-size: 4.3rem;
+    line-height: 4.9rem;
+    letter-spacing: -.4px;
+    margin-bottom: 5.3rem;
+
+    span {
+      color: $primary-color;
+    }
+  }
+
+  ul {
+
+    li {
+      font-size: 1.7rem;
+      line-height: 2.4rem;
+
+      &:not(:last-of-type) {
+        margin-bottom: 2.6rem;
+      }
+    }
+  }
+
+  button {
+    margin-top: 5.8rem;
+  }
+
+}
+
+.icon {
+  color: $white;
+}
+
+.buttonContainer {
+  position: relative;
+}
+
+.arrowImg {
+  width: 226px;
+  position: absolute;
+  bottom: -4rem;
+  left: 13.6rem;
+}
