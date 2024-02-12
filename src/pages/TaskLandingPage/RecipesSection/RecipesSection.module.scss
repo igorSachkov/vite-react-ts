@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+
+.sectionContainer {
+  .title {
+    text-align: center;
+    font-size: 3.7rem;
+    letter-spacing: .7px;
+  }
+
+  .primary {
+    color: $primary-color;
+  }
+
+  .list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5.4rem;
+  }
+
+  .linkContainer {
+    display: flex;
+    margin-top: 6.4rem;
+    margin-right: 1rem;
+    justify-content: end;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #ACADB9;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+
+    span {
+      letter-spacing: -1.1px;
+    }
+
+    .icon {
+      width: 36px;
+      height: 100%;
+      object-fit: contain;
+      margin-left: 1.4rem;
+    }
+
+  }
+
+
+}
+
+

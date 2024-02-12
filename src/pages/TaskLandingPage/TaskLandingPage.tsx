@@ -3,6 +3,7 @@ import {TaskLandingMain} from '@pages/TaskLandingPage/TaskLandingMain/TaskLandin
 import {InfoPanel} from '@pages/TaskLandingPage/InfoPanel/InfoPanel.tsx';
 import {DownloadAppSection} from '@pages/TaskLandingPage/DownloadAppSection/DownloadAppSection.tsx';
 import style from './TaskLandingPage.module.scss';
+import {RecipesSection} from '@pages/TaskLandingPage/RecipesSection/RecipesSection.tsx';
 
 export const TaskLandingPage = () => {
   return (
@@ -19,6 +20,9 @@ export const TaskLandingPage = () => {
         </div>
         <div className='container' style={{marginTop: '9.4rem'}}>
           <div className={style.divider}></div>
+        </div>
+        <div style={{marginTop: '6.8rem'}}>
+          <RecipesSection/>
         </div>
       </main>
     </>

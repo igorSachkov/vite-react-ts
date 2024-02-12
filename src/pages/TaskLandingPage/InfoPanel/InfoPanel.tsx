@@ -21,7 +21,7 @@ export const InfoPanel = () => {
   return (
     <div className={style.infoPanel}>
       <div className={`${style.infoItemContainer}`}>
-        {infoItems.map(({title, children}) => <InfoItem title={title} children={children} key={title}/>)}
+        {infoItems.map((item) => <InfoItem {...item} key={item.title}/>)}
       </div>
       <div className={style.bezier4}></div>
     </div>
