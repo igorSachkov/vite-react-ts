@@ -3,13 +3,13 @@ import {DownloadAppText} from '@pages/TaskLandingPage/DownloadAppSection/Downloa
 
 export const DownloadAppSection = () => {
   return (
-    <div className={'d-flex container'}>
+    <section className={'d-flex container'}>
       <div style={{width: '50%'}}>
         <DownloadAppImage/>
       </div>
       <div style={{width: '50%'}}>
         <DownloadAppText/>
       </div>
-    </div>
+    </section>
   );
 };

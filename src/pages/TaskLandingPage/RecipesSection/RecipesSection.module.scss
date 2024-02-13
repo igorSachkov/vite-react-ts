@@ -8,10 +8,6 @@
     letter-spacing: .7px;
   }
 
-  .primary {
-    color: $primary-color;
-  }
-
   .list {
     display: flex;
     justify-content: space-between;
@@ -27,7 +23,7 @@
 
   .link {
     text-decoration: none;
-    color: #ACADB9;
+    color: $second-text;
     font-size: 1.8rem;
     display: flex;
     align-items: center;

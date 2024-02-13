@@ -34,8 +34,8 @@ export const RecipesSection = () => {
     },
   ];
   return (
-    <div className={`container ${style.sectionContainer}`}>
-      <h2 className={`poppins-500 ${style.title}`}>Our Top <span className={style.primary}>Recipes</span></h2>
+    <section className={`container ${style.sectionContainer}`}>
+      <h2 className={`poppins-500 ${style.title}`}>Our Top <span className={'primary-text'}>Recipes</span></h2>
 
       <div className={style.list}>
         {recipes.map(recipe => <RecipeItem {...recipe}/>)}
@@ -48,6 +48,6 @@ export const RecipesSection = () => {
 
       </div>
 
-    </div>
+    </section>
   );
 };

@@ -121,7 +121,10 @@ body {
 .container {
   margin-right: auto;
   margin-left: auto;
+}
 
+.primary-text {
+  color: $primary-color;
 }
 
 @media (min-width: 576px) {
