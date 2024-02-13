@@ -13,19 +13,22 @@ export const PurchaseInfo = () => {
       title: 'Chicken Hell',
       status: DeliveryStatus.ON_THE_WAY,
       time: '3:09 PM',
-      image: <img src={chickenHellImg} alt='Chicken hell dish'/>
+      image: <img src={chickenHellImg} alt='Chicken hell dish'/>,
+      key: 0
     },
     {
       title: 'Swe Dish',
       status: DeliveryStatus.DELIVERED,
       time: 'Yesterday',
-      image: <img src={sweDishImg} alt='Swe dish'/>
+      image: <img src={sweDishImg} alt='Swe dish'/>,
+      key: 1
     },
     {
       title: 'Fish Hell Veg',
       status: DeliveryStatus.CANCELLED,
       time: 'Yesterday',
-      image: <img src={chickenHellImg} alt='Chicken hell dish'/>
+      image: <img src={chickenHellImg} alt='Chicken hell dish'/>,
+      key: 2
     },
   ];
   return (

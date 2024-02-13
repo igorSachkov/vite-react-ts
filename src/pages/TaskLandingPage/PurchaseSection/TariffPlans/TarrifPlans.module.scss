@@ -1,0 +1,28 @@
+@import "src/styles/variables";
+
+.tariffContainer {
+  padding: 3rem 3.2rem;
+  border: 2px solid #EDF2F7;
+  background-color: #FFFFFF;
+  border-radius: 2rem;
+  margin-left: 8.6rem;
+
+  h4 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -.8px;
+  }
+
+  .selectTariff {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .conditionsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

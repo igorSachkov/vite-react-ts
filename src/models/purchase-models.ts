@@ -12,4 +12,15 @@ export interface IDeliveryStatus {
   title: string;
   status: DeliveryStatus;
   time: string;
+  key: number;
+}
+
+export interface ISelectOption {
+  value: string;
+  label: string;
+  key: number;
+}
+
+export interface ICustomSelectProps {
+  options: ISelectOption[];
 }

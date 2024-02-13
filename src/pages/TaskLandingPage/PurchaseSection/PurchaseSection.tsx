@@ -1,10 +1,12 @@
 import {PurchaseInfo} from '@pages/TaskLandingPage/PurchaseSection/PurchaseInfo/PurchaseInfo.tsx';
 import {TariffPlans} from '@pages/TaskLandingPage/PurchaseSection/TariffPlans/TariffPlans.tsx';
+import style from './PurchaseSection.module.scss';
+
 
 export const PurchaseSection = () => {
   return (
-    <section className={'d-flex container'}>
-      <div style={{width: '50%'}}>
+    <section className={`d-flex ${style.sectionContainer}`}>
+      <div style={{width: '50%', marginTop: '.2rem'}}>
         <PurchaseInfo/>
       </div>
       <div style={{width: '50%'}}>

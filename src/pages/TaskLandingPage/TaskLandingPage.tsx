@@ -28,8 +28,11 @@ export const TaskLandingPage = () => {
         <div className='container' style={{marginTop: '10.4rem'}}>
           <div className={style.divider}></div>
         </div>
-        <div className='container' style={{marginTop: '11.2rem'}}>
+        <div style={{marginTop: '11rem'}}>
           <PurchaseSection/>
+        </div>
+        <div className='container' style={{marginTop: '11.6rem'}}>
+          <div className={style.divider}></div>
         </div>
       </main>
     </>
