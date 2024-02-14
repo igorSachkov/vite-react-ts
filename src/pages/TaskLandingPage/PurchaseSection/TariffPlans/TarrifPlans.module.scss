@@ -2,7 +2,7 @@
 
 .tariffContainer {
   padding: 3rem 3.2rem;
-  border: 2px solid #EDF2F7;
+  border: 2px solid $tariff-border;
   background-color: #FFFFFF;
   border-radius: 2rem;
   margin-left: 8.6rem;
@@ -23,6 +23,8 @@
   .conditionsContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 2.8rem;
+    gap: 1.5rem;
   }
 
 }

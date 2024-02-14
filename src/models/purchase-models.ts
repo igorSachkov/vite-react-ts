@@ -24,3 +24,13 @@ export interface ISelectOption {
 export interface ICustomSelectProps {
   options: ISelectOption[];
 }
+
+export interface ITariff {
+  label: string;
+  text: string;
+  price: string;
+  icon: string;
+  progress: number;
+  key: number;
+  iconBG: string;
+}
