@@ -5,6 +5,7 @@ import {DownloadAppSection} from '@pages/TaskLandingPage/DownloadAppSection/Down
 import style from './TaskLandingPage.module.scss';
 import {RecipesSection} from '@pages/TaskLandingPage/RecipesSection/RecipesSection.tsx';
 import {PurchaseSection} from '@pages/TaskLandingPage/PurchaseSection/PurchaseSection.tsx';
+import {CustomerReviewsSection} from '@pages/TaskLandingPage/CustomerReviewsSection/CustomerReviewsSection.tsx';
 
 export const TaskLandingPage = () => {
   return (
@@ -31,8 +32,11 @@ export const TaskLandingPage = () => {
         <div style={{marginTop: '11rem'}}>
           <PurchaseSection/>
         </div>
-        <div className='container' style={{marginTop: '11.6rem'}}>
+        <div className='container' style={{marginTop: '11rem'}}>
           <div className={style.divider}></div>
+        </div>
+        <div style={{marginTop: '8rem'}}>
+          <CustomerReviewsSection/>
         </div>
       </main>
     </>

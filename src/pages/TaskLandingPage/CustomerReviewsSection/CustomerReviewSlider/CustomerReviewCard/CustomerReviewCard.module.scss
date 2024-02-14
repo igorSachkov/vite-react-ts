@@ -1,0 +1,64 @@
+@import "src/styles/variables";
+
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  width: 700px;
+  padding: 3.2rem 2rem 2.4rem 3.4rem;
+  border-radius: 1.8rem;
+  -webkit-box-shadow: 5px 15px 23px 4px rgba(34, 60, 80, 0.09);
+  -moz-box-shadow: 5px 15px 23px 4px rgba(34, 60, 80, 0.09);
+  box-shadow: 5px 15px 23px 4px rgba(34, 60, 80, 0.09);
+
+  .customerInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .photo {
+      object-fit: contain;
+      width: 94px;
+    }
+
+    .mainIfo {
+      margin-left: 1.8rem;
+      flex-grow: 1;
+
+      h5 {
+        margin: .6rem 0 0;
+        font-size: 1.7rem;
+        letter-spacing: .4px;
+      }
+
+      p {
+        margin: .2rem 0 0;
+        font-size: 1.5rem;
+        color: #5E5D5D;
+        letter-spacing: -.7px;
+      }
+    }
+
+    .quoutes {
+      width: 80px;
+      object-fit: contain;
+      margin-right: 1.9rem;
+      margin-top: 1rem;
+    }
+  }
+
+  .paragraphContainer {
+    margin-top: 2.6rem;
+    .paragraph {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #636363;
+    }
+  }
+
+  .ratingContainer {
+    margin-top: 3rem;
+  }
+
+}
