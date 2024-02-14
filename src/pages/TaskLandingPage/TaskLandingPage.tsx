@@ -7,6 +7,7 @@ import {RecipesSection} from '@pages/TaskLandingPage/RecipesSection/RecipesSecti
 import {PurchaseSection} from '@pages/TaskLandingPage/PurchaseSection/PurchaseSection.tsx';
 import {CustomerReviewsSection} from '@pages/TaskLandingPage/CustomerReviewsSection/CustomerReviewsSection.tsx';
 import {FAQSection} from '@pages/TaskLandingPage/FAQSection/FAQSection.tsx';
+import {Footer} from '@pages/TaskLandingPage/Footer/Footer.tsx';
 
 export const TaskLandingPage = () => {
   return (
@@ -41,6 +42,9 @@ export const TaskLandingPage = () => {
         </div>
         <div className='container' style={{marginTop: '19.1rem'}}>
           <FAQSection/>
+        </div>
+        <div style={{marginTop: '12rem'}}>
+          <Footer/>
         </div>
       </main>
     </>

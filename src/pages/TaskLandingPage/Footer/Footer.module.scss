@@ -1,0 +1,74 @@
+@import "src/styles/variables";
+
+$footer-text-color: #999999;
+
+.footer {
+  background-color: #EAEAEA;
+  width: 100%;
+  padding: 6rem;
+
+  .topFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logoIcon {
+      object-fit: contain;
+      width: 84px;
+    }
+
+    .logoTitle {
+      font-size: 2.6rem;
+      font-weight: bold;
+      color: $primary-color;
+      margin-left: 1.3rem;
+    }
+
+    .linkList {
+      display: flex;
+      flex-direction: row;
+      gap: 6rem;
+
+      a {
+        text-decoration: none;
+        font-size: 1.6rem;
+        letter-spacing: -1.2px;
+        color: $footer-text-color;
+      }
+
+    }
+  }
+
+  .bottomFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5.1rem;
+
+    span {
+      color: $footer-text-color;
+      font-size: 1.6rem;
+      letter-spacing: -1.4px;
+    }
+
+    .socialNetworks {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 4.2rem;
+      margin-right: 1rem;
+
+      img {
+        object-fit: contain;
+        height: 30px;
+      }
+    }
+  }
+
+  .divider {
+    border-bottom: $grey 1px solid;
+    margin: 2.2rem 0;
+  }
+}
