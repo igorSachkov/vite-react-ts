@@ -15,7 +15,7 @@ export const CustomerReviewSlider = ({sliders}: ISliderCustomerProps) => {
       <div>
         <CustomerReviewCard {...sliders[activeSlider]} isActive={true}/>
       </div>
-      <div className={style.r}>
+      <div className={style.activeArea}>
         <div className={style.slides}>
           {slicedArray.map(item => <CustomerReviewCard {...item}/>)}
         </div>
