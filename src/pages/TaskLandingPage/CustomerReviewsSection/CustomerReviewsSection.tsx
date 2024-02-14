@@ -18,22 +18,22 @@ export const CustomerReviewsSection = () => {
       rating: 5,
       key: 0
     },
-    // {
-    //   photo: customerPic,
-    //   name: 'Alexander R.',
-    //   subtitle: '01 Year With Us',
-    //   review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
-    //   rating: 5,
-    //   key: 1
-    // },
-    // {
-    //   photo: customerPic,
-    //   name: 'Alexander R.',
-    //   subtitle: '01 Year With Us',
-    //   review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
-    //   rating: 5,
-    //   key: 2
-    // },
+    {
+      photo: customerPic,
+      name: 'Alexander R.',
+      subtitle: '01 Year With Us',
+      review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
+      rating: 5,
+      key: 1
+    },
+    {
+      photo: customerPic,
+      name: 'Alexander R.',
+      subtitle: '01 Year With Us',
+      review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
+      rating: 5,
+      key: 2
+    },
   ];
   return (
     <section className={style.sectionContainer}>

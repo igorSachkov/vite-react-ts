@@ -41,7 +41,6 @@ export const TariffConditions = ({label, text, price, icon, progress, iconBG}: I
       <div className={style.progressContainer}>
         <div className={style.progress} style={progressStyle}></div>
         <div className={style.progressDone} style={progressDoneStyle}></div>
-
       </div>
 
     </div>

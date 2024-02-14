@@ -7,6 +7,7 @@ export interface ICustomerReviewProps extends IIterableProps {
   subtitle: string;
   review: string;
   rating: number;
+  isActive?: boolean;
 }
 
 export interface ISliderCustomerProps {
