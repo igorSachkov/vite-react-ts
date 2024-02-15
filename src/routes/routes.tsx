@@ -27,7 +27,7 @@ export const rootRouter = createBrowserRouter([
         element: <TaskLandingPage/>
       },
       {
-        path: '/second-task/articles',
+        path: '/second-task/blog',
         element: <Blog/>
       },
     ]

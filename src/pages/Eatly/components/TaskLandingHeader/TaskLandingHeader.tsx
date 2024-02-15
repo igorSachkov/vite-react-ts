@@ -16,7 +16,7 @@ export const TaskLandingHeader = () => {
 
         <nav className={style.nav}>
           <NavLink className={style.headerLink} to=''>Recipes</NavLink>
-          <NavLink className={style.headerLink} to=''>Blog</NavLink>
+          <NavLink className={style.headerLink} to='blog'>Blog</NavLink>
         </nav>
       </div>
 
