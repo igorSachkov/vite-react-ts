@@ -3,7 +3,7 @@ import {CustomSelect} from '@components/CustomSelect/CustomSelect.tsx';
 import {ISelectOption, ITariff} from '@models/purchase-models.ts';
 import {
   TariffConditions
-} from '@pages/TaskLandingPage/PurchaseSection/TariffPlans/TariffConditions/TariffConditions.tsx';
+} from '@pages/Eatly/TaskLandingPage/PurchaseSection/TariffPlans/TariffConditions/TariffConditions.tsx';
 import walletIcon from '@assets/purchaseSection/wallet.png';
 import cameraIcon from '@assets/purchaseSection/camera.png';
 

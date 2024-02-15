@@ -2,7 +2,7 @@ import style from './CustomerReviewCard.module.scss';
 import {ICustomerReviewProps} from '@models/customer-review-models.ts';
 import {
   ReviewRating
-} from '@pages/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewCard/ReviewRating/ReviewRating.tsx';
+} from '@pages/Eatly/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewCard/ReviewRating/ReviewRating.tsx';
 import quoteImg from '@assets/customerReviews/quotes.png';
 
 

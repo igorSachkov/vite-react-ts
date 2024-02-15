@@ -1,5 +1,5 @@
 import style from './InfoPanel.module.scss';
-import {InfoItem} from '@pages/TaskLandingPage/InfoPanel/InfoItem/InfoItem.tsx';
+import {InfoItem} from '@pages/Eatly/TaskLandingPage/InfoPanel/InfoItem/InfoItem.tsx';
 import {IInfoPanelProps} from '@models/info-panel-models.ts';
 
 

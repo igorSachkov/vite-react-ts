@@ -1,5 +1,5 @@
-import {MainText} from '@pages/TaskLandingPage/TaskLandingMain/MainText/MainText.tsx';
-import {MainImage} from '@pages/TaskLandingPage/TaskLandingMain/MainImage/MainImage.tsx';
+import {MainText} from '@pages/Eatly/TaskLandingPage/TaskLandingMain/MainText/MainText.tsx';
+import {MainImage} from '@pages/Eatly/TaskLandingPage/TaskLandingMain/MainImage/MainImage.tsx';
 
 
 export const TaskLandingMain = () => {

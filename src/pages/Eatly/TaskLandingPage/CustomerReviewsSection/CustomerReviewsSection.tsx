@@ -1,12 +1,9 @@
 import style from './CustomerReviewsSection.module.scss';
-import {
-  CustomerReviewCard
-} from '@pages/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewCard/CustomerReviewCard.tsx';
 import {ICustomerReviewProps} from '@models/customer-review-models.ts';
 import customerPic from '@assets/customerReviews/Pic.png';
 import {
   CustomerReviewSlider
-} from '@pages/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewSlider.tsx';
+} from '@pages/Eatly/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewSlider.tsx';
 
 export const CustomerReviewsSection = () => {
   const customerReviews: ICustomerReviewProps[] = [

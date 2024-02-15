@@ -3,7 +3,9 @@ import {createBrowserRouter, redirect} from 'react-router-dom';
 import MainPage from '@pages/MainPage/MainPage.tsx';
 import AuthPage, {AuthAction} from '@pages/AuthPage/AuthPage.tsx';
 import React from 'react';
-import {TaskLandingPage} from '@pages/TaskLandingPage/TaskLandingPage.tsx';
+import {Eatly} from '@pages/Eatly/Eatly.tsx';
+import {TaskLandingPage} from '@pages/Eatly/TaskLandingPage/TaskLandingPage.tsx';
+import {Blog} from '@pages/Eatly/BlogPage/Blog.tsx';
 
 export const rootRouter = createBrowserRouter([
   {
@@ -18,7 +20,17 @@ export const rootRouter = createBrowserRouter([
   },
   {
     path: '/second-task',
-    element: <TaskLandingPage/>
+    element: <Eatly/>,
+    children: [
+      {
+        path: '/second-task',
+        element: <TaskLandingPage/>
+      },
+      {
+        path: '/second-task/articles',
+        element: <Blog/>
+      },
+    ]
   }
 ]);
 

@@ -1,5 +1,5 @@
-import {PurchaseInfo} from '@pages/TaskLandingPage/PurchaseSection/PurchaseInfo/PurchaseInfo.tsx';
-import {TariffPlans} from '@pages/TaskLandingPage/PurchaseSection/TariffPlans/TariffPlans.tsx';
+import {PurchaseInfo} from '@pages/Eatly/TaskLandingPage/PurchaseSection/PurchaseInfo/PurchaseInfo.tsx';
+import {TariffPlans} from '@pages/Eatly/TaskLandingPage/PurchaseSection/TariffPlans/TariffPlans.tsx';
 import style from './PurchaseSection.module.scss';
 
 

@@ -1,5 +1,5 @@
-import {DownloadAppImage} from '@pages/TaskLandingPage/DownloadAppSection/DownloadAppImage/DownloadAppImage.tsx';
-import {DownloadAppText} from '@pages/TaskLandingPage/DownloadAppSection/DownloadAppText/DownloadAppText.tsx';
+import {DownloadAppImage} from '@pages/Eatly/TaskLandingPage/DownloadAppSection/DownloadAppImage/DownloadAppImage.tsx';
+import {DownloadAppText} from '@pages/Eatly/TaskLandingPage/DownloadAppSection/DownloadAppText/DownloadAppText.tsx';
 
 export const DownloadAppSection = () => {
   return (

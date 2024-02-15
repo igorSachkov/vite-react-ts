@@ -2,7 +2,7 @@ import style from './RecipesSection.module.scss';
 import {IRecipe} from '@models/recipes-models.ts';
 import chickenKingImg from '@assets/recipesSection/Mask Group.png';
 import burgerKingImg from '@assets/recipesSection/Group 427320335.png';
-import {RecipeItem} from '@pages/TaskLandingPage/RecipesSection/RecipeItem/RecipeItem.tsx';
+import {RecipeItem} from '@pages/Eatly/TaskLandingPage/RecipesSection/RecipeItem/RecipeItem.tsx';
 import {Link} from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 

@@ -1,7 +1,7 @@
 import style from './PurchaseInfo.module.scss';
 import {
   DeliveryStatusItem
-} from '@pages/TaskLandingPage/PurchaseSection/PurchaseInfo/DeliveryStatusItem/DeliveryStatusItem.tsx';
+} from '@pages/Eatly/TaskLandingPage/PurchaseSection/PurchaseInfo/DeliveryStatusItem/DeliveryStatusItem.tsx';
 import {DeliveryStatus, IDeliveryStatus} from '@models/purchase-models.ts';
 import chickenHellImg from '@assets/purchaseSection/chicken-hell.png';
 import sweDishImg from '@assets/purchaseSection/swe-dish.png';
