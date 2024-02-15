@@ -1,5 +1,5 @@
 export interface IDummyRestModel<T> {
-  getAll: () => Promise<T[] | Error>;
+  getAll: (limit?: number) => Promise<T>;
 }
 
 export interface IRecipe {
@@ -28,4 +28,14 @@ export interface IPost {
   userId: number;
   tags: string[];
   reactions: number;
+}
+
+interface IServerAnswer {
+  limit: number;
+  skip: number;
+  total: number;
+}
+
+export interface IRecipesServerAnswer extends IServerAnswer {
+  recipes: IRecipe[];
 }

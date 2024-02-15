@@ -1,16 +1,16 @@
 import style from './RecipeItem.module.scss';
-import {IRecipe} from '@models/recipes-models.ts';
 import star from '@assets/recipesSection/star.png';
+import {IRecipe} from '@models/dummy-rest-model.ts';
 
 export const RecipeItem = (props: IRecipe) => {
   return (
     <div className={style.recipeItem}>
-      {props.img}
+      <img src={props.image} alt="recipe image"/>
       <div className={style.content}>
-        <span className={`poppins-600 ${style.type}`}>{props.type}</span>
-        <h3 className={`poppins-500 ${style.title}`}>{props.title}</h3>
+        <span className={`poppins-600 ${style.type}`}>{props.cuisine}</span>
+        <h3 className={`poppins-500 ${style.title}`}>{props.name}</h3>
         <div className={style.cardFooter}>
-          <span className={`manrope ${style.time}`}>{props.cookingTime}min</span>
+          <span className={`manrope ${style.time}`}>{props.cookTimeMinutes}min</span>
           <div className={`manrope ${style.rating}`}><img src={star} alt="star"/>&nbsp;{props.rating}</div>
         </div>
       </div>

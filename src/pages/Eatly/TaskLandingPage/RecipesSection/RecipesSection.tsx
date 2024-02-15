@@ -1,49 +1,40 @@
 import style from './RecipesSection.module.scss';
-import {IRecipe} from '@models/recipes-models.ts';
-import chickenKingImg from '@assets/recipesSection/Mask Group.png';
-import burgerKingImg from '@assets/recipesSection/Group 427320335.png';
 import {RecipeItem} from '@pages/Eatly/TaskLandingPage/RecipesSection/RecipeItem/RecipeItem.tsx';
 import {Link} from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {useEffect, useState} from 'react';
+import {restRecipesService} from '@services/rest-service.ts';
+import {IRecipe} from '@models/dummy-rest-model.ts';
 
 export const RecipesSection = () => {
-  const recipes: IRecipe[] = [
-    {
-      type: 'Pizza',
-      title: 'The Chicken King',
-      cookingTime: 24,
-      rating: 4.8,
-      img: <img src={chickenKingImg} alt='Chicken king'/>,
-      key: 0
-    },
-    {
-      type: 'Pizza',
-      title: 'The Burger King',
-      cookingTime: 24,
-      rating: 4.9,
-      img: <img src={burgerKingImg} alt='Burger king'/>,
-      key: 1
-    },
-    {
-      type: 'Pizza',
-      title: 'The Chicken King',
-      cookingTime: 24,
-      rating: 4.8,
-      img: <img src={chickenKingImg} alt='Chicken king'/>,
-      key: 2
-    },
-  ];
+  const [recipes, setRecipes] = useState<IRecipe[]>([]);
+  useEffect(() => {
+    if (!recipes?.length) {
+      restRecipesService.getAll(0)
+        .then(({recipes}) => {
+          /** В идеале конечно было бы лучше отсортировать на сервере и забрать с лимитом 3 */
+          const sortedRecipe = recipes.sort((a, b) => b.rating - a.rating);
+          const bestRecipes = sortedRecipe.splice(0, 3);
+          setRecipes(recipes => bestRecipes);
+        })
+        .catch(((err: string) => {
+          console.warn(err, 'err');
+        }));
+    }
+  }, []);
   return (
     <section className={`container ${style.sectionContainer}`}>
-      <h2 id={'recipes'} className={`poppins-500 ${style.title}`}>Our Top <span className={'primary-text'}>Recipes</span></h2>
+      <h2 id={'recipes'} className={`poppins-500 ${style.title}`}>Our Top <span
+        className={'primary-text'}>Recipes</span></h2>
 
       <div className={style.list}>
-        {recipes.map(recipe => <RecipeItem {...recipe}/>)}
+        {recipes.map(recipe => <RecipeItem {...recipe} key={recipe.id}/>)}
       </div>
 
       <div className={style.linkContainer}>
         <div>
-          <Link className={`poppins-500 ${style.link}`} to='/second-task' ><span>View All</span><ArrowForwardIcon className={style.icon}></ArrowForwardIcon></Link>
+          <Link className={`poppins-500 ${style.link}`} to='/second-task'><span>View All</span><ArrowForwardIcon
+            className={style.icon}></ArrowForwardIcon></Link>
         </div>
 
       </div>

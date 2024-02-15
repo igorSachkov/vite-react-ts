@@ -1,4 +1,4 @@
-import {IDummyRestModel, IPost, IRecipe} from '@models/dummy-rest-model.ts';
+import {IDummyRestModel, IPost, IRecipe, IRecipesServerAnswer} from '@models/dummy-rest-model.ts';
 
 class RestService<T> implements IDummyRestModel<T> {
   private readonly restUrl: string;
@@ -7,13 +7,17 @@ class RestService<T> implements IDummyRestModel<T> {
     this.restUrl = restUrl;
   }
 
-  public async getAll(): Promise<T[] | Error> {
+  public async getAll(limit?: number): Promise<T> {
     try {
-      const response = await fetch(this.restUrl);
+      let finalRequest = this.restUrl;
+      if (typeof limit === 'number') {
+        finalRequest += `?limit=${limit}`;
+      }
+      const response = await fetch(finalRequest);
       return await response.json();
     } catch (err) {
       const error = err as Error;
-      return new Error(error?.message);
+      throw new Error(error?.message);
 
     }
   }
@@ -21,5 +25,5 @@ class RestService<T> implements IDummyRestModel<T> {
 
 
 const restPostService = new RestService<IPost>('https://dummyjson.com/posts');
-const restRecipesService = new RestService<IRecipe>('https://dummyjson.com/recipes');
+const restRecipesService = new RestService<IRecipesServerAnswer>('https://dummyjson.com/recipes');
 export {restPostService, restRecipesService};
