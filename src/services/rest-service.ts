@@ -1,4 +1,4 @@
-import {IDummyRestModel, IPost, IRecipe, IRecipesServerAnswer} from '@models/dummy-rest-model.ts';
+import {IDummyRestModel, IPost, IRecipesServerAnswer} from '@models/dummy-rest-model.ts';
 
 class RestService<T> implements IDummyRestModel<T> {
   private readonly restUrl: string;

@@ -5,9 +5,12 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {useEffect, useState} from 'react';
 import {restRecipesService} from '@services/rest-service.ts';
 import {IRecipe} from '@models/dummy-rest-model.ts';
+import {useDispatch, useSelector} from 'react-redux';
+import {IRecipesSelector, setValue} from '@store/recipesSlice.ts';
 
 export const RecipesSection = () => {
-  const [recipes, setRecipes] = useState<IRecipe[]>([]);
+  const recipes: IRecipe[] = useSelector((state: IRecipesSelector) => state.recipes.value);
+  const dispatch = useDispatch();
   useEffect(() => {
     if (!recipes?.length) {
       restRecipesService.getAll(0)
@@ -15,7 +18,7 @@ export const RecipesSection = () => {
           /** В идеале конечно было бы лучше отсортировать на сервере и забрать с лимитом 3 */
           const sortedRecipe = recipes.sort((a, b) => b.rating - a.rating);
           const bestRecipes = sortedRecipe.splice(0, 3);
-          setRecipes(recipes => bestRecipes);
+          dispatch(setValue(bestRecipes));
         })
         .catch(((err: string) => {
           console.warn(err, 'err');
