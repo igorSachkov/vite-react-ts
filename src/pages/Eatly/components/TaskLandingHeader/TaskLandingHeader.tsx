@@ -15,7 +15,8 @@ export const TaskLandingHeader = () => {
         </div>
 
         <nav className={style.nav}>
-          <NavLink className={style.headerLink} to=''>Recipes</NavLink>
+          <NavLink className={style.headerLink} to={'/second-task#recipes'} >Recipes</NavLink>
+          <NavLink className={style.headerLink} to={'/second-task#faq'} >FAQ</NavLink>
           <NavLink className={style.headerLink} to='blog'>Blog</NavLink>
         </nav>
       </div>

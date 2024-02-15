@@ -35,7 +35,7 @@ export const RecipesSection = () => {
   ];
   return (
     <section className={`container ${style.sectionContainer}`}>
-      <h2 className={`poppins-500 ${style.title}`}>Our Top <span className={'primary-text'}>Recipes</span></h2>
+      <h2 id={'recipes'} className={`poppins-500 ${style.title}`}>Our Top <span className={'primary-text'}>Recipes</span></h2>
 
       <div className={style.list}>
         {recipes.map(recipe => <RecipeItem {...recipe}/>)}
