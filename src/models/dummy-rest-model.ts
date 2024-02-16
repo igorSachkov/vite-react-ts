@@ -53,6 +53,10 @@ export interface IRecipesServerAnswer extends IServerAnswer {
   recipes: IRecipe[];
 }
 
+export interface IPostsServerAnswer extends IServerAnswer {
+  posts: IPost[];
+}
+
 export interface ICommentsServerAnswer extends IServerAnswer {
   comments: IComment[];
 }
