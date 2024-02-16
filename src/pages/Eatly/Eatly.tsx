@@ -11,7 +11,9 @@ export const Eatly = () => {
     <Provider store={store}>
       <ScrollToAnchor/>
       <TaskLandingHeader/>
-      <Outlet/>
+      <main>
+        <Outlet/>
+      </main>
       <div style={{marginTop: '12rem'}}>
         <Footer/>
       </div>

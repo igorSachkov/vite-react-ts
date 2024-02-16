@@ -1,4 +1,4 @@
-import {IDummyRestModel, IPost, IRecipesServerAnswer} from '@models/dummy-rest-model.ts';
+import {ICommentsServerAnswer, IDummyRestModel, IPost, IRecipesServerAnswer} from '@models/dummy-rest-model.ts';
 
 class RestService<T> implements IDummyRestModel<T> {
   private readonly restUrl: string;
@@ -25,5 +25,6 @@ class RestService<T> implements IDummyRestModel<T> {
 
 
 const restPostService = new RestService<IPost>('https://dummyjson.com/posts');
-const restRecipesService = new RestService<IRecipesServerAnswer>('https://dummyjson.com/recipes');
-export {restPostService, restRecipesService};
+const restRecipesService = new RestService<IRecipesServerAnswer>('https://dummyjson.com/recipes/meal-type/lunch');
+const restCommentsService = new RestService<ICommentsServerAnswer>('https://dummyjson.com/comments');
+export {restPostService, restRecipesService, restCommentsService};

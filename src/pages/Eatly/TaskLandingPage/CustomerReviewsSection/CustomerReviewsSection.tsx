@@ -1,42 +1,36 @@
 import style from './CustomerReviewsSection.module.scss';
-import {ICustomerReviewProps} from '@models/customer-review-models.ts';
-import customerPic from '@assets/customerReviews/Pic.png';
 import {
   CustomerReviewSlider
 } from '@pages/Eatly/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewSlider.tsx';
+import {IComment} from '@models/dummy-rest-model.ts';
+import {useDispatch, useSelector} from 'react-redux';
+import {useEffect} from 'react';
+
+import {ICommentsSelector, setValue} from '@redux/slices/commentsSlice.ts';
+import {restCommentsService} from '@services/rest-service.ts';
+
 
 export const CustomerReviewsSection = () => {
-  const customerReviews: ICustomerReviewProps[] = [
-    {
-      photo: customerPic,
-      name: 'Alexander R.',
-      subtitle: '01 Year With Us',
-      review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
-      rating: 5,
-      key: 0
-    },
-    {
-      photo: customerPic,
-      name: 'Alexander R.',
-      subtitle: '01 Year With Us',
-      review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
-      rating: 5,
-      key: 1
-    },
-    {
-      photo: customerPic,
-      name: 'Alexander R.',
-      subtitle: '01 Year With Us',
-      review: 'Online invoice payment helps companies save time, are faster and save maximum effort for the clients and save maximum effort. Online invoice payment helps companies save time',
-      rating: 5,
-      key: 2
-    },
-  ];
+  const comments: IComment[] = useSelector((state: ICommentsSelector) => state.comments.value);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!comments?.length) {
+      restCommentsService.getAll(3)
+        .then(({comments}) => {
+          dispatch(setValue(comments));
+        })
+        .catch(((err: string) => {
+          console.warn(err, 'err');
+        }));
+    }
+  }, []);
   return (
     <section className={style.sectionContainer}>
       <h2 className={'poppins-700'}><span className={'primary-text'}>Customer</span> Say</h2>
       <div className={style.reviewsContainer}>
-        <CustomerReviewSlider sliders={customerReviews}/>
+        {!comments.length ?
+          <h4 style={{textAlign: 'center', fontSize: '3rem'}}>Loading...</h4> :
+          <CustomerReviewSlider comments={comments}/>}
       </div>
     </section>
   );

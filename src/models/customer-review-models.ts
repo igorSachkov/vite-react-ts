@@ -1,15 +1,10 @@
-import {IIterableProps} from '@models/app-models.ts';
+import {IComment} from '@models/dummy-rest-model.ts';
 
 
-export interface ICustomerReviewProps extends IIterableProps {
-  photo: string;
-  name: string;
-  subtitle: string;
-  review: string;
-  rating: number;
+export interface ICustomerReviewProps extends IComment {
   isActive?: boolean;
 }
 
 export interface ISliderCustomerProps {
-  sliders: ICustomerReviewProps[];
+  comments: IComment[];
 }

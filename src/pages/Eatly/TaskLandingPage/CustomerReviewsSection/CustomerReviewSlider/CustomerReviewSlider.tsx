@@ -6,18 +6,18 @@ import style from './CustomerReviewSlider.module.scss';
 import React, {useState} from 'react';
 
 
-export const CustomerReviewSlider = ({sliders}: ISliderCustomerProps) => {
+export const CustomerReviewSlider = ({comments}: ISliderCustomerProps) => {
   const [activeSlider, setActiveSlider] = useState(0);
-  const slicedArray = sliders.slice(activeSlider, -1);
+  const slicedArray = comments.slice(activeSlider, -1);
   /** Не продумал, пока, как это должно работать */
   return (
     <div className={style.sliderContainer}>
       <div>
-        <CustomerReviewCard {...sliders[activeSlider]} isActive={true}/>
+        <CustomerReviewCard {...comments[activeSlider]} isActive={true}/>
       </div>
       <div className={style.activeArea}>
         <div className={style.slides}>
-          {slicedArray.map(item => <CustomerReviewCard {...item}/>)}
+          {slicedArray.map(item => <CustomerReviewCard {...item} key={item.id}/>)}
         </div>
 
         <div className={style.progressContainer}>

@@ -30,6 +30,19 @@ export interface IPost {
   reactions: number;
 }
 
+interface IUser {
+  id: number;
+  username: string;
+}
+
+export interface IComment {
+  id: number;
+  body: string;
+  postId: number;
+  user: IUser;
+}
+
+
 interface IServerAnswer {
   limit: number;
   skip: number;
@@ -38,4 +51,8 @@ interface IServerAnswer {
 
 export interface IRecipesServerAnswer extends IServerAnswer {
   recipes: IRecipe[];
+}
+
+export interface ICommentsServerAnswer extends IServerAnswer {
+  comments: IComment[];
 }
