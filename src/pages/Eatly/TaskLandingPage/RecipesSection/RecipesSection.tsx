@@ -28,7 +28,7 @@ export const RecipesSection = () => {
   return (
     <section className={`container ${style.sectionContainer}`}>
       <h2 id={'recipes'} className={`poppins-500 ${style.title}`}>Our Top <span
-        className={'primary-text'}>Recipes</span></h2>
+        className={'primary-text'}>Lunch</span></h2>
       {!recipes.length ?
         <h4 style={{textAlign: 'center', fontSize: '3rem'}}>Loading...</h4> :
         <div className={style.list}>
