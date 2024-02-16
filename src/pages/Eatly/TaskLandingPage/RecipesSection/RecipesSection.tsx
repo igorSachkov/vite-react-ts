@@ -6,7 +6,7 @@ import {useEffect, useState} from 'react';
 import {restRecipesService} from '@services/rest-service.ts';
 import {IRecipe} from '@models/dummy-rest-model.ts';
 import {useDispatch, useSelector} from 'react-redux';
-import {IRecipesSelector, setValue} from '@store/recipesSlice.ts';
+import {IRecipesSelector, setValue} from '@redux/slices/recipesSlice.ts';
 
 export const RecipesSection = () => {
   const recipes: IRecipe[] = useSelector((state: IRecipesSelector) => state.recipes.value);

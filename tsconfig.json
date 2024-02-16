@@ -27,7 +27,7 @@
       "@assets/*": ["./src/assets/*"],
       "@components/*": ["./src/components/*"],
       "@services/*": ["./src/services/*"],
-      "@store/*": ["./src/store/*"],
+      "@redux/*": ["./src/redux/*"],
     }
   },
   "include": ["src"],

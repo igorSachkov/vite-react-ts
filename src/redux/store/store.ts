@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import recipesReducer from './recipesSlice.ts';
+import recipesReducer from '@redux/slices/recipesSlice.ts';
 
 
 export default configureStore({
