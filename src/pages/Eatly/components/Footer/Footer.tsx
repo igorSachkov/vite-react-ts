@@ -1,6 +1,6 @@
 import style from './Footer.module.scss';
 import logo from '@assets/Logo.png';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import instagramLogo from '@assets/footer/instagramLogo.png';
 import inLogo from '@assets/footer/inLogo.png';
 import facebookLogo from '@assets/footer/facebookLogo.png';
@@ -19,8 +19,9 @@ export const Footer = () => {
             </div>
           </div>
           <div className={style.linkList}>
-            <Link to='/second-task'>About Us</Link>
-            <Link to='/second-task'>Contact</Link>
+            <NavLink className={style.headerLink} to={'/second-task#recipes'} >Recipes</NavLink>
+            <NavLink className={style.headerLink} to={'/second-task#faq'} >FAQ</NavLink>
+            <NavLink className={style.headerLink} to='blog'>Blog</NavLink>
           </div>
         </div>
 
