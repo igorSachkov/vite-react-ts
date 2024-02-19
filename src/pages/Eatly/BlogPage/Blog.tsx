@@ -5,6 +5,9 @@ import {IBlogSelector, setValue} from '@redux/slices/blogSlice.ts';
 import {useEffect, useState} from 'react';
 import style from './Blog.module.scss';
 import {BlogItem} from '@pages/Eatly/BlogPage/BlogItem/BlogItem.tsx';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+
 
 interface IBlogPagination {
   total: number;
@@ -53,15 +56,35 @@ export const Blog = () => {
     loadData(pagination.perPage, skip);
   }, [pagination.currentPage]);
 
+  function backClick() {
+    setPagination(obj => ({...obj, currentPage: obj.currentPage - 1}));
+  }
+
+  function forwardClick() {
+    setPagination(obj => ({...obj, currentPage: obj.currentPage + 1}));
+  }
+
+  function isBackDisabled(): boolean {
+    return (isLoading || pagination.currentPage <= 1);
+  }
+
+  function isForwardDisabled(): boolean {
+    return (isLoading || pagination.currentPage >= pagination.pages);
+  }
+
   return (
     <div className={style.sectionContainer}>
       <h2 className={`poppins-600 ${style.title}`}>Latest <span className={'primary-text'}>Articles</span></h2>
       <div className={style.blogContainer}>
         {posts.map(item => <BlogItem {...item} key={item.id}/>)}
       </div>
-      <div>
-        <button disabled={isLoading || pagination.currentPage <= 1} onClick={() => setPagination(obj => ({...obj, currentPage: obj.currentPage - 1}))}>{'<-'}arrowLeft</button>
-        <button disabled={isLoading || pagination.currentPage >= pagination.pages} onClick={() => setPagination(obj => ({...obj, currentPage: obj.currentPage + 1}))}>arrowRight{'->'}</button>
+      <div className={style.pagination}>
+        <button className={isBackDisabled() ? '' : 'pointer'} disabled={isBackDisabled()} onClick={() => backClick()}>
+          <ArrowBackIcon/>
+        </button>
+        <button className={isForwardDisabled() ? '' : 'pointer'} disabled={isForwardDisabled()} onClick={() => forwardClick()}>
+          <ArrowForwardIcon/>
+        </button>
       </div>
     </div>
   );

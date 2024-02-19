@@ -19,5 +19,23 @@
     grid-row-gap: 20px;
   }
 
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+
+    button {
+      border: none;
+      background-color: inherit;
+
+      svg {
+        font-size: 4rem;
+
+      }
+    }
+  }
+
 }
 
