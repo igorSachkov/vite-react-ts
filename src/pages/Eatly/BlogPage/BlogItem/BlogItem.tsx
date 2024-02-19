@@ -8,7 +8,7 @@ export const BlogItem = ({title, tags, reactions, body}: IPost) => {
       <div className={style.info}>
         <div className={style.tags}>
           {tags.map((tag, i) => {
-            return <span className={'poppins-400'}>#{tag}{i + 1 < tags.length && ','} </span>;
+            return <span className={'poppins-400'} key={i}>#{tag}{i + 1 < tags.length && ','} </span>;
           })}
         </div>
         <div>

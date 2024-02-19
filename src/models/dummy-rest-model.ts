@@ -1,5 +1,5 @@
 export interface IDummyRestModel<T> {
-  getAll: (limit?: number) => Promise<T>;
+  getAll: (limit?: number, skip?: number) => Promise<T>;
 }
 
 export interface IRecipe {
