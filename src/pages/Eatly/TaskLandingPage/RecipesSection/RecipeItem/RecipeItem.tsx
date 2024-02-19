@@ -1,5 +1,5 @@
 import style from './RecipeItem.module.scss';
-import star from '@assets/recipesSection/star.png';
+import star from '@assets/star.png';
 import {IRecipe} from '@models/dummy-rest-model.ts';
 
 export const RecipeItem = (props: IRecipe) => {

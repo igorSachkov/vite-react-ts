@@ -28,6 +28,17 @@
       font-size: 1rem;
       letter-spacing: .6px;
     }
+
+    .rating {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 1.4rem;
+
+      img {
+        width: 34px;
+      }
+    }
   }
 
   .body {

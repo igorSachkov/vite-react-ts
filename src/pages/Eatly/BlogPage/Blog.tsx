@@ -15,6 +15,7 @@ interface IBlogPagination {
 }
 
 // todo Переделать кеширование через redux (либо убрать глобальный стейт, он тут теперь не нужен)
+/** #remark Я запрашиваю полный объект IPost т.к. перечислять все поля которые нужны, кроме userId смысла не вижу */
 export const Blog = () => {
   const [pagination, setPagination] = useState<IBlogPagination>({
     currentPage: 1,

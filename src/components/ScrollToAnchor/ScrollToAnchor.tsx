@@ -1,6 +1,7 @@
 import {useEffect, useRef} from 'react';
 import {useLocation} from 'react-router-dom';
 
+/** #remark плавынй скролл по якорям */
 function ScrollToAnchor() {
   const location = useLocation();
   const lastHash = useRef('');
