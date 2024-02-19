@@ -1,0 +1,43 @@
+@import "src/styles/variables";
+
+
+.blog {
+  border-radius: 1.2rem;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 4px 21px 48px 9px rgba(34, 60, 80, 0.12);
+  -moz-box-shadow: 4px 21px 48px 9px rgba(34, 60, 80, 0.12);
+  box-shadow: 4px 21px 48px 9px rgba(34, 60, 80, 0.12);
+  padding: 2.2rem 1.4rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    color: #252525;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.4rem;
+
+
+    .tags {
+      color: #8D8D8D;
+      font-size: 1rem;
+      letter-spacing: .6px;
+    }
+  }
+
+  .body {
+    margin-top: 2.4rem;
+
+    p {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: #081420;
+    }
+  }
+}

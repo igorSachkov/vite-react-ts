@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+
+
+.sectionContainer {
+  margin: 0 11rem;
+
+  .title {
+    text-align: center;
+    font-size: 3.6rem;
+    margin-top: 8rem;
+  }
+
+  .blogContainer {
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5rem;
+    grid-row-gap: 20px;
+  }
+
+}
+
