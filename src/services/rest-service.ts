@@ -1,25 +1,29 @@
 import {
+  IComment,
   ICommentsServerAnswer,
-  IDummyRestModel,
-  IPostsServerAnswer,
-  IRecipesServerAnswer
+  IDummyRestModel, IPost,
+  IPostsServerAnswer, IRecipe,
+  IRecipesServerAnswer, IUser, IUsersServerAnswer
 } from '@models/dummy-rest-model.ts';
-import {CacheForRest} from '@services/cache-service.ts';
 
-class RestService<T> implements IDummyRestModel<T> {
-  private readonly restUrl: string;
+
+class RestService<T, P> implements IDummyRestModel<T, P> {
+  protected readonly restUrl: string;
 
   constructor(restUrl: string) {
-    this.restUrl = restUrl + '?';
+    this.restUrl = restUrl;
   }
 
   public async getAll(limit?: number, skip?: number): Promise<T> {
+    const isHaveLimit = typeof limit === 'number';
+    const isHaveSkip = typeof skip === 'number';
+    const requestUrl = this.restUrl + '?';
     try {
-      let finalRequest = this.restUrl;
-      if (typeof limit === 'number') {
+      let finalRequest = requestUrl;
+      if (isHaveLimit) {
         finalRequest += `limit=${limit}&`;
       }
-      if (typeof skip === 'number') {
+      if (isHaveSkip) {
         finalRequest += `skip=${skip}&`;
       }
       const response = await fetch(finalRequest);
@@ -30,11 +34,45 @@ class RestService<T> implements IDummyRestModel<T> {
 
     }
   }
+
+  public async getItem(item: string | number, select: string[] = []): Promise<P> {
+    let requestUrl = this.restUrl + `/${item}`;
+    try {
+      if (Array.isArray(select) && select.length) {
+        requestUrl += '?select=';
+        select.forEach(key => requestUrl += `${key},`);
+      }
+      const response = await fetch(requestUrl);
+      return await response.json();
+    } catch (err) {
+      const error = err as Error;
+      throw new Error(error?.message);
+
+    }
+  }
+}
+
+class CommentsRestService<T, P> extends RestService<T, P> {
+  constructor(restUrl: string) {
+    super(restUrl);
+  }
+
+  public async getAllCommentsByPostId(postId: string | number): Promise<T> {
+    const requestUrl = this.restUrl + `/post/${postId}`;
+    try {
+      const response = await fetch(requestUrl);
+      return await response.json();
+    } catch (err) {
+      const error = err as Error;
+      throw new Error(error?.message);
+
+    }
+  }
 }
 
 
-const restPostService = new RestService<IPostsServerAnswer>('https://dummyjson.com/posts');
-const cachedRestPostService = new CacheForRest(restPostService);
-const restRecipesService = new RestService<IRecipesServerAnswer>('https://dummyjson.com/recipes/meal-type/lunch');
-const restCommentsService = new RestService<ICommentsServerAnswer>('https://dummyjson.com/comments');
-export {cachedRestPostService, restRecipesService, restCommentsService};
+const restPostService = new RestService<IPostsServerAnswer, IPost>('https://dummyjson.com/posts');
+const restRecipesService = new RestService<IRecipesServerAnswer, IRecipe>('https://dummyjson.com/recipes/meal-type/lunch');
+const restCommentsService = new CommentsRestService<ICommentsServerAnswer, IComment>('https://dummyjson.com/comments');
+const restUserService = new RestService<IUsersServerAnswer, IUser>('https://dummyjson.com/users');
+export {restPostService, restRecipesService, restCommentsService, restUserService};

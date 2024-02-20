@@ -1,4 +1,3 @@
-import {cachedRestPostService} from '@services/rest-service.ts';
 import {IPost, IPostsServerAnswer} from '@models/dummy-rest-model.ts';
 import {useDispatch, useSelector} from 'react-redux';
 import {IBlogSelector, setValue} from '@redux/slices/blogSlice.ts';
@@ -7,6 +6,7 @@ import style from './Blog.module.scss';
 import {BlogItem} from '@pages/Eatly/BlogPage/BlogItem/BlogItem.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {cachedRestPostService} from '@services/cache-service.ts';
 
 
 interface IBlogPagination {
@@ -32,7 +32,7 @@ export const Blog = () => {
   const posts: IPost[] = useSelector((state: IBlogSelector) => state.posts.value);
   const dispatch = useDispatch();
 
-  function loadData(limit: number, skip: number, isFirst = false) {
+  function loadData(limit: number, skip: number) {
     setLoading(true);
     cachedRestPostService.getAll(limit, skip)
       .then((answer: IPostsServerAnswer) => {

@@ -2,7 +2,7 @@
 
 .button {
   font-size: 1.4rem;
-  padding: 1.3rem 2.4rem;
+  padding: 1.3rem 1rem;
   border-radius: 1rem;
   background-color: inherit;
   cursor: pointer;
@@ -11,11 +11,20 @@
   display: flex;
   align-items: center;
 
+  span {
+    margin: 0 1.5rem;
+    &+svg {
+      margin-right: 1.1rem;
+    }
+  }
+
+  svg + span {
+    margin-left: 2rem;
+  }
+
   svg {
     width: 36px;
     height: 36px;
-    margin-left: 1.6rem;
-    margin-right: -.4rem;
   }
 }
 

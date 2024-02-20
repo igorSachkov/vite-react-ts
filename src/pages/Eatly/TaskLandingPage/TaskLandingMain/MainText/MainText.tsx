@@ -14,8 +14,8 @@ export const MainText = () => {
       <p className={style.mainText}>EatLy help you set saving goals, earn cash back offers, Go to disclaimer for more details and get paychecks up to two days early. Get a <span style={{color: '#6155AE'}}>$20 bonus</span>.</p>
 
       <div className={`d-flex ${style.buttonContainer}`}>
-        <LandingButton text='Get Started' isPrimary={true}/>
-        <LandingButton text='Go Pro'/>
+        <LandingButton isPrimary={true}><span>Get Started</span></LandingButton>
+        <LandingButton><span>Go Pro</span></LandingButton>
       </div>
 
     </div>

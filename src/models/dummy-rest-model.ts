@@ -1,5 +1,6 @@
-export interface IDummyRestModel<T> {
+export interface IDummyRestModel<T, P> {
   getAll: (limit?: number, skip?: number) => Promise<T>;
+  getItem: (item: string | number, select?: string[]) => Promise<P>;
 }
 
 export interface IRecipe {
@@ -30,16 +31,49 @@ export interface IPost {
   reactions: number;
 }
 
-interface IUser {
-  id: number;
-  username: string;
-}
-
 export interface IComment {
   id: number;
   body: string;
   postId: number;
-  user: IUser;
+  user: Pick<IUser, 'id' | 'username'>;
+}
+
+// any - т.к. не вижу смысла глубоко углубляться в данный интерфейс
+export interface IUser {
+  id: number;
+  firstName: string;
+  lastName: string;
+  maidenName: string;
+  age: number;
+  gender: string;
+  email: string;
+  phone: string;
+  username: string;
+  password: string;
+  birthDate: string;
+  image: string;
+  height: number;
+  weight: number;
+  eyeColor: string;
+  hair: {
+    [key: string]: string
+  };
+  domain: string;
+  ip: string;
+  address: {
+    [key: string]: string | number | any
+  };
+  macAddress: string;
+  university: string;
+  bank: {
+    [key: string]: string | number
+  };
+  company: {
+    [key: string]: string | number | any
+  };
+  ein: string;
+  ssn: string;
+  userAgent: string;
 }
 
 
@@ -59,4 +93,8 @@ export interface IPostsServerAnswer extends IServerAnswer {
 
 export interface ICommentsServerAnswer extends IServerAnswer {
   comments: IComment[];
+}
+
+export interface IUsersServerAnswer extends IServerAnswer {
+  users: IUser[];
 }

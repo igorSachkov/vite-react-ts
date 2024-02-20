@@ -1,20 +1,23 @@
 import style from './BlogItem.module.scss';
 import {IPost} from '@models/dummy-rest-model.ts';
-import star from '@assets/star.png';
+import {useLocation, useNavigate} from 'react-router-dom';
+import {Rating} from '@pages/Eatly/components/Rating/Rating.tsx';
+import {Tags} from '@pages/Eatly/components/Tags/Tags.tsx';
 
-export const BlogItem = ({title, tags, reactions, body}: IPost) => {
+export const BlogItem = ({title, tags, reactions, body, id}: IPost) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  function openItem() {
+    navigate('/second-task/blog-item' + `/${id}`);
+  }
 
   return (
-    <div className={style.blog}>
+    <div className={style.blog} onClick={() => openItem()}>
       <h3 className={'poppins-600'}>{title}</h3>
       <div className={style.info}>
-        <div className={style.tags}>
-          {tags.map((tag, i) => {
-            return <span className={'poppins-400'} key={i + `${tag}`}>#{tag}{i + 1 < tags.length && ','} </span>;
-          })}
-        </div>
+        <Tags tags={tags}/>
         <div>
-          <div className={`manrope ${style.rating}`}>{reactions}&nbsp;<img src={star} alt="star"/></div>
+          <Rating reactions={reactions}/>
         </div>
       </div>
       <div className={style.body}>

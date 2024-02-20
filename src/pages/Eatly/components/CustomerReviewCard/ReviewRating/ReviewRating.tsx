@@ -1,8 +1,7 @@
-import {ICustomerReviewProps} from '@models/customer-review-models.ts';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import style from './ReviewRating.module.scss';
 
-export const ReviewRating = ({rating}: Pick<ICustomerReviewProps, 'rating'>) => {
+export const ReviewRating = ({rating}: {rating: number}) => {
   const starRating = [false, false, false, false, false];
 
   function getRating() {

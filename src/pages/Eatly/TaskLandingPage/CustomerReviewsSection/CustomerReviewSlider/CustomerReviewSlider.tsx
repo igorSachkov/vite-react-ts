@@ -1,7 +1,7 @@
 import {ISliderCustomerProps} from '@models/customer-review-models.ts';
 import {
   CustomerReviewCard
-} from '@pages/Eatly/TaskLandingPage/CustomerReviewsSection/CustomerReviewSlider/CustomerReviewCard/CustomerReviewCard.tsx';
+} from '@pages/Eatly/components/CustomerReviewCard/CustomerReviewCard.tsx';
 import style from './CustomerReviewSlider.module.scss';
 import React, {useState} from 'react';
 

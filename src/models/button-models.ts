@@ -1,7 +1,6 @@
 import {ReactNode} from 'react';
 
 export interface IButtonProps {
-  text: string;
+  children: ReactNode;
   isPrimary?: boolean;
-  icon?: ReactNode;
 }

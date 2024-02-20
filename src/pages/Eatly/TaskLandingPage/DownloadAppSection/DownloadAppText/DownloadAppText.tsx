@@ -13,8 +13,7 @@ export const DownloadAppText = () => {
       </ul>
 
       <div className={style.buttonContainer}>
-        <LandingButton text={'Download'} isPrimary={true}
-          icon={<ArrowForwardIcon className={style.icon}></ArrowForwardIcon>}/>
+        <LandingButton isPrimary={true}><span>Download</span><ArrowForwardIcon className={style.icon}></ArrowForwardIcon></LandingButton>
         <img className={style.arrowImg} src={vectorImg} alt="arrow"/>
       </div>
 
