@@ -17,7 +17,7 @@ export const CustomerReviewSlider = ({comments}: ISliderCustomerProps) => {
       </div>
       <div className={style.activeArea}>
         <div className={style.slides}>
-          {slicedArray.map(item => <div className={style.comment}><CustomerReviewCard {...item} key={item.id}/></div>)}
+          {slicedArray.map(item => <div className={style.comment} key={item.id}><CustomerReviewCard {...item}/></div>)}
         </div>
 
         <div className={style.progressContainer}>
