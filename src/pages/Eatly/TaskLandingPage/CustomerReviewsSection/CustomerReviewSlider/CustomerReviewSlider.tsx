@@ -13,11 +13,11 @@ export const CustomerReviewSlider = ({comments}: ISliderCustomerProps) => {
   return (
     <div className={style.sliderContainer}>
       <div>
-        <CustomerReviewCard {...comments[activeSlider]} isActive={true}/>
+        <div className={style.comment}><CustomerReviewCard {...comments[activeSlider]} isActive={true}/></div>
       </div>
       <div className={style.activeArea}>
         <div className={style.slides}>
-          {slicedArray.map(item => <CustomerReviewCard {...item} key={item.id}/>)}
+          {slicedArray.map(item => <div className={style.comment}><CustomerReviewCard {...item} key={item.id}/></div>)}
         </div>
 
         <div className={style.progressContainer}>

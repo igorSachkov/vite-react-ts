@@ -1,5 +1,5 @@
 import style from './BlogItemPage.module.scss';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {IBlogItemParams, UserForBlog} from '@models/blog-models.ts';
 import {useEffect, useState} from 'react';
 import {restCommentsService, restPostService, restUserService} from '@services/rest-service.ts';
@@ -8,12 +8,14 @@ import {Rating} from '@pages/Eatly/components/Rating/Rating.tsx';
 import {Tags} from '@pages/Eatly/components/Tags/Tags.tsx';
 import {LandingButton} from '@components/LandingButton/LandingButton.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import {CustomerReviewCard} from '@pages/Eatly/components/CustomerReviewCard/CustomerReviewCard.tsx';
 
 export const BlogItemPage = () => {
   const params: Readonly<Partial<IBlogItemParams>> = useParams<Partial<IBlogItemParams>>();
   const [blog, setBlog] = useState<IPost>();
   const [user, setUser] = useState<UserForBlog>();
   const [comments, setComments] = useState<IComment[]>([]);
+  const navigate = useNavigate();
 
   async function loadData() {
     if (params.id === null || params.id === undefined) {
@@ -35,6 +37,10 @@ export const BlogItemPage = () => {
       console.warn('Ошибка загрузки данных!', err);
     }
 
+  }
+
+  function navBack() {
+    navigate(-1);
   }
 
   useEffect(() => {
@@ -64,12 +70,14 @@ export const BlogItemPage = () => {
         </div>
 
         <div className={style.buttonBlock}>
-          <LandingButton>
+          <LandingButton onClick={navBack}>
             <ArrowBackIcon className={style.icon}></ArrowBackIcon><span>All Articles</span>
           </LandingButton>
         </div>
 
-        <div className={style.commentsContainer}></div>
+        <div className={style.commentsContainer}>
+          {comments.map(comment => <CustomerReviewCard body={comment.body} user={comment.user} key={comment.id} isActive={true}/>)}
+        </div>
 
       </div>
     );

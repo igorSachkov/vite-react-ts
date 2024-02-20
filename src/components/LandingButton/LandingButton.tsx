@@ -2,8 +2,8 @@ import style from './LandingButton.module.scss';
 import {IButtonProps} from '@models/button-models.ts';
 
 
-export const LandingButton = ({isPrimary, children}: IButtonProps) => {
+export const LandingButton = ({isPrimary, children, onClick}: IButtonProps) => {
   return (
-    <button className={`poppins-500 ${style.button} ${isPrimary && style.primary}`}>{children}</button>
+    <button className={`poppins-500 ${style.button} ${isPrimary && style.primary}`} onClick={onClick}>{children}</button>
   );
 };
