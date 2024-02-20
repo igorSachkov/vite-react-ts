@@ -13,8 +13,7 @@ export class CacheForRest<T, P> implements IDummyRestModel<T, P> {
   }
 
   public async getAll(limit?: number, skip?: number): Promise<T> {
-    const requestCacheKey = this.createKey(limit, skip);
-    console.warn(requestCacheKey);
+    const requestCacheKey = `getAll${limit}_${skip}`;
     if (this.isCacheHave(requestCacheKey)) {
       return new Promise((resolve) => {
         resolve(this.cache[requestCacheKey] as T);
@@ -29,8 +28,8 @@ export class CacheForRest<T, P> implements IDummyRestModel<T, P> {
     }
   }
 
-  public async getItem(itemNum: string): Promise<P> {
-    const requestCacheKey = this.createKey(itemNum);
+  public async getItem(itemNum: string | number): Promise<P> {
+    const requestCacheKey = `getItem${itemNum}`;
     console.warn(requestCacheKey);
 
     if (this.isCacheHave(requestCacheKey)) {
@@ -55,26 +54,6 @@ export class CacheForRest<T, P> implements IDummyRestModel<T, P> {
     this.cache[key] = value;
   }
 
-  private createKey(itemNum?: string): string;
-  private createKey(limit?: number, skip?: number): string;
-  private createKey(param1?: number | string | undefined, param2?: number | undefined): string {
-    let generatedKey = '';
-
-    if (typeof param1 === 'number') {
-      generatedKey += `limit${param1}`;
-      if (!(typeof param2 === 'number')) {
-        return generatedKey;
-      }
-      generatedKey += `skip${param2}`;
-
-    } else if (typeof param1 === 'string') {
-      generatedKey += `item${param1}`;
-    } else {
-      generatedKey = 'default_key';
-    }
-
-    return generatedKey;
-  }
 }
 
 const cachedRestPostService = new CacheForRest(restPostService);
