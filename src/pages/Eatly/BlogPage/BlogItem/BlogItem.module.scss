@@ -33,6 +33,13 @@
       font-size: 1.4rem;
       line-height: 2rem;
       color: #081420;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      hyphens: manual;
+      word-break: keep-all;
     }
+
   }
 }
