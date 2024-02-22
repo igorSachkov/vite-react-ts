@@ -10,6 +10,7 @@
   border-color: $primary-color;
   display: flex;
   align-items: center;
+  transition: .4s ease-in-out filter;
 
   span {
     margin: 0 1.5rem;
@@ -25,6 +26,11 @@
   svg {
     width: 36px;
     height: 36px;
+  }
+
+  &:disabled {
+    filter: grayscale(50%);
+    cursor: inherit;
   }
 }
 

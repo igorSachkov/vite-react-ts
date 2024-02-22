@@ -38,6 +38,12 @@ export interface IComment {
   user: Pick<IUser, 'id' | 'username'>;
 }
 
+export interface IPostComment {
+  body: string,
+  postId: number,
+  userId: number,
+}
+
 // any - т.к. не вижу смысла глубоко углубляться в данный интерфейс
 export interface IUser {
   id: number;

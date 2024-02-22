@@ -3,7 +3,7 @@ import {
   ICommentsServerAnswer,
   IDummyRestModel, IPost,
   IPostsServerAnswer, IRecipe,
-  IRecipesServerAnswer, IUser, IUsersServerAnswer
+  IRecipesServerAnswer, IUser, IUsersServerAnswer, IPostComment
 } from '@models/dummy-rest-model.ts';
 
 
@@ -61,6 +61,22 @@ class CommentsRestService<T, P> extends RestService<T, P> {
     const requestUrl = this.restUrl + `/post/${postId}`;
     try {
       const response = await fetch(requestUrl);
+      return await response.json();
+    } catch (err) {
+      const error = err as Error;
+      throw new Error(error?.message);
+
+    }
+  }
+
+  public async addNewComment(item: IPostComment): Promise<P> {
+    const requestUrl = this.restUrl + '/add';
+    try {
+      const response = await fetch(requestUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(item)
+      });
       return await response.json();
     } catch (err) {
       const error = err as Error;

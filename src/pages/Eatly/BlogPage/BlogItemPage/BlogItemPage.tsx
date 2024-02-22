@@ -9,6 +9,7 @@ import {Tags} from '@pages/Eatly/components/Tags/Tags.tsx';
 import {LandingButton} from '@components/LandingButton/LandingButton.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {CustomerReviewCard} from '@pages/Eatly/components/CustomerReviewCard/CustomerReviewCard.tsx';
+import {AddComment} from '@pages/Eatly/components/AddComment/AddComment.tsx';
 
 export const BlogItemPage = () => {
   const params: Readonly<Partial<IBlogItemParams>> = useParams<Partial<IBlogItemParams>>();
@@ -16,6 +17,10 @@ export const BlogItemPage = () => {
   const [user, setUser] = useState<UserForBlog>();
   const [comments, setComments] = useState<IComment[]>([]);
   const navigate = useNavigate();
+
+  function addComment(comment: IComment): void {
+    setComments([...comments, comment]);
+  }
 
   async function loadData() {
     if (params.id === null || params.id === undefined) {
@@ -77,6 +82,9 @@ export const BlogItemPage = () => {
 
         <div className={style.commentsContainer}>
           {comments.map(comment => <CustomerReviewCard body={comment.body} user={comment.user} key={comment.id} isActive={true}/>)}
+        </div>
+        <div className={style.commentContainer}>
+          <AddComment addComment={addComment}/>
         </div>
 
       </div>
