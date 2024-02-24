@@ -1,11 +1,7 @@
 
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    es2020: true,
-    node: true
-  },
+  env: {browser: true, es2020: true},
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -24,7 +20,6 @@ module.exports = {
     '@typescript-eslint/semi': 'error',
     '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/quotes': ['warn', 'single', { avoidEscape: true }],
-    "@typescript-eslint/no-explicit-any": "off",
-    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-explicit-any': "off"
   },
 }
