@@ -43,7 +43,7 @@ export const mockComments: IComment[] = [
   }
 ];
 
-const mockCommentsAnswer: ICommentsServerAnswer = {
+export const mockCommentsAnswer: ICommentsServerAnswer = {
   comments: mockComments,
   total: mockComments.length,
   limit: 0,
