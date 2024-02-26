@@ -9,6 +9,7 @@
     "@assets/(.*)$": "<rootDir>/src/assets/$1",
     "@components/(.*)$": "<rootDir>/src/components/$1",
     "@services/(.*)$": "<rootDir>/src/services/$1",
-    "@redux/(.*)$": "<rootDir>/src/redux/$1"
+    "@redux/(.*)$": "<rootDir>/src/redux/$1",
+    "@mocks/(.*)$": "<rootDir>/mocks/$1"
   }
 }
