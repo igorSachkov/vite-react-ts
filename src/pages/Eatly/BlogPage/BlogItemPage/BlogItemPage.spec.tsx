@@ -1,7 +1,7 @@
 import {act, cleanup, render, screen, RenderResult} from '@testing-library/react';
 import {BlogItemPage} from './BlogItemPage.tsx';
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import {MemoryRouter} from 'react-router-dom';
 import Router from 'react-router-dom';
 import {restCommentsService, restPostService, restUserService} from '@services/rest-service.ts';
 import style from './BlogItemPage.module.scss';
@@ -20,9 +20,9 @@ jest.mock('react-router-dom', () => ({
 
 const createWrapper = () => {
   return render(
-    <BrowserRouter>
+    <MemoryRouter>
       <BlogItemPage/>
-    </BrowserRouter>);
+    </MemoryRouter>);
 };
 
 let wrapper: RenderResult;
