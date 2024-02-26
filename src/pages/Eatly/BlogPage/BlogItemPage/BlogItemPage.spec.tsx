@@ -1,4 +1,4 @@
-import {act, cleanup, render, screen, RenderResult, fireEvent, waitFor} from '@testing-library/react';
+import {act, cleanup, render, screen, RenderResult} from '@testing-library/react';
 import {BlogItemPage} from './BlogItemPage.tsx';
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
@@ -12,7 +12,6 @@ import {
   mockUserServiceAnswer, mockUserForBlog
 } from '@mocks/test-blog.ts';
 import '@testing-library/jest-dom';
-import * as router from 'react-router';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -27,11 +26,11 @@ const createWrapper = () => {
 };
 
 let wrapper: RenderResult;
-beforeEach(async () => wrapper = await act(async () => createWrapper()));
-afterEach(cleanup);
 
 
 describe('BlogItemPage', () => {
+  beforeEach(async () => wrapper = await act(async () => createWrapper()));
+  afterEach(cleanup);
   jest.spyOn(Router, 'useParams').mockReturnValue(mockBlogItemParams);
   jest.spyOn(restPostService, 'getItem').mockReturnValue(mockPostServiceAnswer);
   jest.spyOn(restUserService, 'getItem').mockReturnValue(mockUserServiceAnswer);
@@ -50,31 +49,5 @@ describe('BlogItemPage', () => {
     const userFullNameHeading = screen.getByRole('heading', {name: `${mockUserForBlog?.firstName} ${mockUserForBlog?.lastName}`});
     expect(userFullNameHeading).toBeInTheDocument();
   });
-
-
-  // it('All Articles button click should return to previously path', async () => {
-  //   const button: HTMLButtonElement = screen.getByRole('button', {name: 'All Articles'});
-  //   const navigate = jest.fn();
-  //   jest.spyOn(router, 'useNavigate').mockImplementation(() => navigate);
-  //   fireEvent.click(button)
-  //
-  //   await waitFor(() => expect(navigate).toHaveBeenCalledTimes(1));
-  //
-  //
-  //   //expect(navigate).toHaveBeenCalledWith('/home');
-  //   // const mockedNavigate = jest.fn();
-  //   //
-  //   // jest.mock('react-router-dom', () => ({
-  //   //   ...jest.requireActual('react-router-dom'),
-  //   //   useNavigate: () => mockedNavigate
-  //   // }));
-  //   //
-  //   // const button: HTMLButtonElement = screen.getByRole('button', {name: 'All Articles'});
-  //   // expect(button).toBeInstanceOf(HTMLButtonElement);
-  //   // act(() => fireEvent.click(button));
-  //   // expect(mockedNavigate).toHaveBeenCalledTimes(1)
-  //   // // expect(mockedNavigate).toHaveBeenCalledWith(-1);
-  //
-  // });
 
 });
