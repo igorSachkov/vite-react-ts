@@ -4,6 +4,7 @@ import {Eatly} from '@pages/Eatly/Eatly.tsx';
 import {TaskLandingPage} from '@pages/Eatly/TaskLandingPage/TaskLandingPage.tsx';
 import {Blog} from '@pages/Eatly/BlogPage/Blog.tsx';
 import {BlogItemPage} from '@pages/Eatly/BlogPage/BlogItemPage/BlogItemPage.tsx';
+import {ErrorComponent} from '@components/ErrorComponent/ErrorComponent.tsx';
 
 
 export const rootRouter = createBrowserRouter([
@@ -23,6 +24,10 @@ export const rootRouter = createBrowserRouter([
         path: '/blog-item/:id',
         element: <BlogItemPage/>
       },
+      {
+        path: '/*',
+        element: <ErrorComponent/>
+      }
     ]
   }
 ]);
