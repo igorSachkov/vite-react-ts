@@ -2,7 +2,7 @@ import style from './BlogItemPage.module.scss';
 import {useNavigate, useParams} from 'react-router-dom';
 import {IBlogItemParams, UserForBlog} from '@models/blog-models.ts';
 import {useEffect, useState} from 'react';
-import {restCommentsService, restPostService, restUserService} from '@services/rest-service.ts';
+import {restCommentsService, restBlogService, restUserService} from '@services/rest-service.ts';
 import {IComment, ICommentsServerAnswer, IPost, IUser} from '@models/dummy-rest-model.ts';
 import {Rating} from '@pages/Eatly/components/Rating/Rating.tsx';
 import {Tags} from '@pages/Eatly/components/Tags/Tags.tsx';
@@ -29,7 +29,7 @@ export const BlogItemPage = () => {
 
     try {
       const usersField: (keyof IUser)[]= ['firstName', 'lastName', 'image'];
-      const post: IPost = await restPostService.getItem(params.id);
+      const post: IPost = await restBlogService.getItem(params.id);
       const userPromise: Promise<UserForBlog> = restUserService.getItem(`${post.userId}`, usersField);
       const commentPromise: Promise<ICommentsServerAnswer> = restCommentsService.getAllCommentsByPostId(post.id);
       const result = await Promise.allSettled([userPromise, commentPromise] as const);

@@ -93,7 +93,7 @@ export interface IRecipesServerAnswer extends IServerAnswer {
   recipes: IRecipe[];
 }
 
-export interface IPostsServerAnswer extends IServerAnswer {
+export interface IBlogServerAnswer extends IServerAnswer {
   posts: IPost[];
 }
 

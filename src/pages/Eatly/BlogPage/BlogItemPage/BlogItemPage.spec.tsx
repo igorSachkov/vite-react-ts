@@ -3,15 +3,12 @@ import {BlogItemPage} from './BlogItemPage.tsx';
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 import Router from 'react-router-dom';
-import {restCommentsService, restPostService, restUserService} from '@services/rest-service.ts';
+import {restCommentsService, restBlogService, restUserService} from '@services/rest-service.ts';
 import style from './BlogItemPage.module.scss';
-import {
-  mockBlogItemParams, mockComments,
-  mockCommentsServiceAnswer, mockBlogItem,
-  mockPostServiceAnswer,
-  mockUserServiceAnswer, mockUserForBlog
-} from '@mocks/test-blog.ts';
 import '@testing-library/jest-dom';
+import {mockBlogGetItemAnswer, mockBlogItem, mockBlogItemParams} from '@mocks/blog-mocks.ts';
+import {mockUserForBlog, mockUserServiceAnswer} from '@mocks/user-mocks.ts';
+import {mockComments, mockCommentsServiceAnswer} from '@mocks/comments-mocks.ts';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -32,7 +29,7 @@ describe('BlogItemPage', () => {
   beforeEach(async () => wrapper = await act(async () => createWrapper()));
   afterEach(cleanup);
   jest.spyOn(Router, 'useParams').mockReturnValue(mockBlogItemParams);
-  jest.spyOn(restPostService, 'getItem').mockReturnValue(mockPostServiceAnswer);
+  jest.spyOn(restBlogService, 'getItem').mockReturnValue(mockBlogGetItemAnswer);
   jest.spyOn(restUserService, 'getItem').mockReturnValue(mockUserServiceAnswer);
   jest.spyOn(restCommentsService, 'getAllCommentsByPostId').mockReturnValue(mockCommentsServiceAnswer);
 

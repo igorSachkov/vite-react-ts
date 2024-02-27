@@ -2,8 +2,8 @@ import '@testing-library/jest-dom';
 import {act, cleanup, fireEvent, render, RenderResult, screen} from '@testing-library/react';
 import {AddComment} from '@pages/Eatly/components/AddComment/AddComment.tsx';
 import {restCommentsService} from '@services/rest-service.ts';
-import {mockComments} from '@mocks/test-blog.ts';
 import {IComment} from '@models/dummy-rest-model.ts';
+import {mockComments} from '@mocks/comments-mocks.ts';
 
 
 const addCommentMockFn = jest.fn();

@@ -2,7 +2,7 @@ import {
   IComment,
   ICommentsServerAnswer,
   IDummyRestModel, IPost,
-  IPostsServerAnswer, IRecipe,
+  IBlogServerAnswer, IRecipe,
   IRecipesServerAnswer, IUser, IUsersServerAnswer, IPostComment
 } from '@models/dummy-rest-model.ts';
 
@@ -87,8 +87,8 @@ class CommentsRestService<T, P> extends RestService<T, P> {
 }
 
 
-const restPostService = new RestService<IPostsServerAnswer, IPost>('https://dummyjson.com/posts');
+const restBlogService = new RestService<IBlogServerAnswer, IPost>('https://dummyjson.com/posts');
 const restRecipesService = new RestService<IRecipesServerAnswer, IRecipe>('https://dummyjson.com/recipes/meal-type/lunch');
 const restCommentsService = new CommentsRestService<ICommentsServerAnswer, IComment>('https://dummyjson.com/comments');
 const restUserService = new RestService<IUsersServerAnswer, IUser>('https://dummyjson.com/users');
-export {restPostService, restRecipesService, restCommentsService, restUserService};
+export {restBlogService, restRecipesService, restCommentsService, restUserService};

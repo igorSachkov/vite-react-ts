@@ -1,12 +1,10 @@
-import {IPost, IPostsServerAnswer} from '@models/dummy-rest-model.ts';
-import {useDispatch, useSelector} from 'react-redux';
-import {IBlogSelector, setValue} from '@redux/slices/blogSlice.ts';
+import {IPost, IBlogServerAnswer} from '@models/dummy-rest-model.ts';
 import {useEffect, useState} from 'react';
 import style from './Blog.module.scss';
 import {BlogItem} from '@pages/Eatly/BlogPage/BlogItem/BlogItem.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import {cachedRestPostService} from '@services/cache-service.ts';
+import {cachedRestBlogService} from '@services/cache-service.ts';
 
 
 interface IBlogPagination {
@@ -17,8 +15,6 @@ interface IBlogPagination {
   skip: number;
 }
 
-// todo Переделать кеширование через redux (либо убрать глобальный стейт, он тут теперь не нужен)
-/** #remark Я запрашиваю полный объект IPost т.к. перечислять все поля которые нужны, кроме userId смысла не вижу */
 export const Blog = () => {
   const [pagination, setPagination] = useState<IBlogPagination>({
     currentPage: 1,
@@ -29,19 +25,18 @@ export const Blog = () => {
   });
 
   const [isLoading, setLoading] = useState(false);
-  const posts: IPost[] = useSelector((state: IBlogSelector) => state.posts.value);
-  const dispatch = useDispatch();
+  const [posts, setPosts] = useState<IPost[]>([]);
 
   function loadData(limit: number, skip: number) {
     setLoading(true);
-    cachedRestPostService.getAll(limit, skip)
-      .then((answer: IPostsServerAnswer) => {
+    cachedRestBlogService.getAll(limit, skip)
+      .then((answer: IBlogServerAnswer) => {
         setPagination((blogNav) => ({
           ...blogNav,
           total: answer.total,
           pages: Math.max(answer.total / blogNav.perPage),
         }));
-        dispatch(setValue(answer.posts));
+        setPosts(answer.posts);
       })
       .catch(((err: string) => {
         console.warn(err, 'err');

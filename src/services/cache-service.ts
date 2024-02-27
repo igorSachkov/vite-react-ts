@@ -1,6 +1,6 @@
 import {IDummyRestModel} from '@models/dummy-rest-model.ts';
 import {ICache} from '@models/cache-service-models.ts';
-import {restPostService} from '@services/rest-service.ts';
+import {restBlogService} from '@services/rest-service.ts';
 
 
 /** #remark Сервис кеширования (Паттерн "Декоратор") */
@@ -56,5 +56,5 @@ export class CacheForRest<T, P> implements IDummyRestModel<T, P> {
 
 }
 
-const cachedRestPostService = new CacheForRest(restPostService);
-export {cachedRestPostService};
+const cachedRestBlogService = new CacheForRest(restBlogService);
+export {cachedRestBlogService};
