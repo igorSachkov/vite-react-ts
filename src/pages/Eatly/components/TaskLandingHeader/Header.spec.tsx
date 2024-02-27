@@ -30,8 +30,8 @@ describe('Header', () => {
   it('NavLinks are displayed correctly and have the correct attributes.', () => {
     const navLinks = wrapper.getAllByRole('link') as HTMLAnchorElement[];
     expect(navLinks.length).toBe(3);
-    expect(navLinks[0].getAttribute('href')).toBe('/second-task#recipes');
-    expect(navLinks[1].getAttribute('href')).toBe('/second-task#faq');
+    expect(navLinks[0].getAttribute('href')).toBe('/#recipes');
+    expect(navLinks[1].getAttribute('href')).toBe('/#faq');
     expect(navLinks[2].getAttribute('href')).toBe('/blog');
   });
 });

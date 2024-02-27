@@ -7,7 +7,7 @@ import {Tags} from '@pages/Eatly/components/Tags/Tags.tsx';
 export const BlogItem = ({title, tags, reactions, body, id}: IPost) => {
   const navigate = useNavigate();
   function openItem() {
-    navigate('/second-task/blog-item' + `/${id}`);
+    navigate('/blog-item' + `/${id}`);
   }
 
   return (

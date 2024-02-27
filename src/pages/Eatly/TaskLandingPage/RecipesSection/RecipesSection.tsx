@@ -1,8 +1,6 @@
 import style from './RecipesSection.module.scss';
 import {RecipeItem} from '@pages/Eatly/TaskLandingPage/RecipesSection/RecipeItem/RecipeItem.tsx';
-// import {Link} from 'react-router-dom';
-// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {restRecipesService} from '@services/rest-service.ts';
 import {IRecipe} from '@models/dummy-rest-model.ts';
 import {useDispatch, useSelector} from 'react-redux';
@@ -27,22 +25,12 @@ export const RecipesSection = () => {
   }, []);
   return (
     <section className={`container ${style.sectionContainer}`}>
-      <h2 id={'recipes'} className={`poppins-500 ${style.title}`}>Our Top <span
-        className={'primary-text'}>Lunch</span></h2>
+      <h2 id={'recipes'} className={`poppins-500 ${style.title}`}>Our Top <span className={'primary-text'}>Lunch</span></h2>
       {!recipes.length ?
         <h4 style={{textAlign: 'center', fontSize: '3rem'}}>Loading...</h4> :
         <div className={style.list}>
           {recipes.map(recipe => <RecipeItem {...recipe} key={recipe.id}/>)}
         </div>}
-
-
-      {/*<div className={style.linkContainer}>*/}
-      {/*  <div>*/}
-      {/*    <Link className={`poppins-500 ${style.link}`} to='/second-task'><span>View All</span><ArrowForwardIcon*/}
-      {/*      className={style.icon}></ArrowForwardIcon></Link>*/}
-      {/*  </div>*/}
-
-      {/*</div>*/}
 
     </section>
   );

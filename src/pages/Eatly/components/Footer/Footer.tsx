@@ -19,8 +19,8 @@ export const Footer = () => {
             </div>
           </div>
           <div className={style.linkList}>
-            <NavLink className={style.headerLink} to={'/second-task#recipes'} >Recipes</NavLink>
-            <NavLink className={style.headerLink} to={'/second-task#faq'} >FAQ</NavLink>
+            <NavLink className={style.headerLink} to={'/#recipes'} >Recipes</NavLink>
+            <NavLink className={style.headerLink} to={'/#faq'} >FAQ</NavLink>
             <NavLink className={style.headerLink} to='blog'>Blog</NavLink>
           </div>
         </div>
@@ -32,10 +32,10 @@ export const Footer = () => {
             <span>© 2023 EATLY All Rights Reserved.</span>
           </div>
           <div className={style.socialNetworks}>
-            <Link to='/second-task'><img src={instagramLogo} alt="instagram logo"/></Link>
-            <Link to='/second-task'><img src={inLogo} alt="in logo"/></Link>
-            <Link to='/second-task'><img src={facebookLogo} alt="facebook logo"/></Link>
-            <Link to='/second-task'><img src={twitterLogo} alt="twitter logo"/></Link>
+            <Link to='/'><img src={instagramLogo} alt="instagram logo"/></Link>
+            <Link to='/'><img src={inLogo} alt="in logo"/></Link>
+            <Link to='/'><img src={facebookLogo} alt="facebook logo"/></Link>
+            <Link to='/'><img src={twitterLogo} alt="twitter logo"/></Link>
           </div>
         </div>
       </div>
