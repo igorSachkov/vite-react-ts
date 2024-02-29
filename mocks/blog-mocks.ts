@@ -1,7 +1,7 @@
 import {IBlogServerAnswer, IPost} from '@models/dummy-rest-model.ts';
 import {IBlogItemParams} from '@models/blog-models.ts';
 
-/** Blog Mock  */
+/** BlogPage Mock  */
 
 const mockId = 'test_id';
 export const mockBlogItemParams: Partial<IBlogItemParams> = {id: mockId};

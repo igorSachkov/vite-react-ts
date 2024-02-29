@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+
+.infoItemContainer {
+  padding-top: 5rem;
+  padding-bottom: 4.2rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 32vh;
+
+  div:not(:last-child) {
+    border-right: 1px solid grey;
+  }
+}
+
+.infoPanel {
+  width: 100%;
+  // Понимание есть, что можно сделать bg-color и кривыми Безье, а вот времени и навыка- нет.
+  background: center / contain no-repeat $secondary-color url("../../assets/infoPanelBG.png");
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: #C5C5C5;
+}
+
+.text {
+  color: #C5BFED;
+  font-size: 1.2rem;
+  letter-spacing: 0.1px;
+  text-align: center;
+  margin: 0 0 .3rem;
+}
+
+.bezier4 {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  transition: all 1s cubic-bezier(0, 0.9, 0.27, 0.99);
+  width: 2px;
+  background-color: red;
+}

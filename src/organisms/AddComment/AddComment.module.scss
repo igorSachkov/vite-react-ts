@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+
+.commentSection {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 2rem;
+  }
+
+  textarea {
+    margin-top: 3rem;
+    border: 2px solid $primary-color;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    padding: 2rem;
+    resize: none;
+  }
+
+  .buttonContainer {
+    margin-top: 3rem;
+
+    button {
+      padding-left: 14rem;
+      padding-right: 14rem;
+    }
+  }
+
+}
