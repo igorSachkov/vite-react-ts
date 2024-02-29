@@ -3,7 +3,6 @@
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
     "\\.(css|less|scss)$": "identity-obj-proxy",
-    "@pages/(.*)$": "<rootDir>/src/pages/$1",
     "@models/(.*)$": "<rootDir>/src/models/$1",
     "@shared/(.*)$": "<rootDir>/src/shared/$1",
     "@assets/(.*)$": "<rootDir>/src/assets/$1",
@@ -11,8 +10,5 @@
     "@services/(.*)$": "<rootDir>/src/services/$1",
     "@redux/(.*)$": "<rootDir>/src/redux/$1",
     "@mocks/(.*)$": "<rootDir>/mocks/$1",
-    "@atoms/(.*)$": ["<rootDir>/src/atoms/$1"],
-    "@molecules/(.*)$": ["<rootDir>/src/molecules/$1"],
-    "@organisms/(.*)$": ["<rootDir>/src/organisms/$1"]
   }
 }

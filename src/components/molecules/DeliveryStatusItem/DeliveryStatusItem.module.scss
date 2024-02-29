@@ -1,0 +1,57 @@
+@import "src/styles/variables";
+
+
+.deliveryItem {
+  flex-direction: row;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 2px 4px 17px 4px rgba(34, 60, 80, 0.03);
+  -moz-box-shadow: 2px 4px 17px 4px rgba(34, 60, 80, 0.03);
+  box-shadow: 2px 4px 17px 4px rgba(34, 60, 80, 0.03);
+  width: 462px;
+  padding: .4rem 1.4rem .4rem 2rem;
+  border-radius: 1.2rem;
+
+  .imgContainer {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  .textContainer {
+    margin-left: 1.45rem;
+
+    h4 {
+      margin: .9rem 0 0;
+      font-size: 1.6rem;
+      color: #323142;
+    }
+  }
+
+  .status {
+    margin: .2rem 0 0;
+  }
+
+  .alert {
+    color: #F1534E;
+  }
+
+  .timeContainer {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-grow: 1;
+
+    p {
+      margin: 0 0 .2rem;
+      font-size: 1.1rem;
+      letter-spacing: .8px;
+      color: $second-text;
+    }
+  }
+}

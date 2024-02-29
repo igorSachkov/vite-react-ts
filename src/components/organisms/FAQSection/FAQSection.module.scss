@@ -1,0 +1,23 @@
+@import "src/styles/variables";
+
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+
+  h2 {
+    text-align: center;
+    font-size: 3.8rem;
+    letter-spacing: -.4px;
+    line-height: 4.5rem;
+    position: relative;
+  }
+
+  .titleImg {
+    position: absolute;
+    right: -73px;
+    top: -61px;
+    object-fit: contain;
+    width: 62px;
+  }
+}

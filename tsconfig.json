@@ -21,7 +21,6 @@
     "noFallthroughCasesInSwitch": true,
 
     "paths": {
-      "@pages/*": ["./src/pages/*"],
       "@models/*": ["./src/models/*"],
       "@shared/*": ["./src/shared/*"],
       "@assets/*": ["./src/assets/*"],
@@ -29,9 +28,6 @@
       "@services/*": ["./src/services/*"],
       "@redux/*": ["./src/redux/*"],
       "@mocks/*": ["./mocks/*"],
-      "@atoms/*": ["./src/atoms/*"],
-      "@molecules/*": ["./src/molecules/*"],
-      "@organisms/*": ["./src/organisms/*"]
     }
   },
   "include": ["src"],

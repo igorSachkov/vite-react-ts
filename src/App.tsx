@@ -2,13 +2,13 @@ import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from '@redux/store/store.ts';
-import ScrollToAnchor from './molecules/ScrollToAnchor/ScrollToAnchor.tsx';
-import {ErrorPage} from '@pages/ErrorPage/ErrorPage.tsx';
-import {Header} from './organisms/Header/Header.tsx';
-import {MainPage} from '@pages/TaskLandingPage/MainPage.tsx';
-import {BlogPage} from '@pages/BlogPage/BlogPage.tsx';
-import {BlogItemPage} from '@pages/BlogItemPage/BlogItemPage.tsx';
-import {Footer} from './organisms/Footer/Footer.tsx';
+import ScrollToAnchor from '@components/molecules/ScrollToAnchor/ScrollToAnchor.tsx';
+import {ErrorPage} from '@components/pages/ErrorPage/ErrorPage.tsx';
+import {Header} from '@components/organisms/Header/Header.tsx';
+import {MainPage} from '@components/pages/TaskLandingPage/MainPage.tsx';
+import {BlogPage} from '@components/pages/BlogPage/BlogPage.tsx';
+import {BlogItemPage} from '@components/pages/BlogItemPage/BlogItemPage.tsx';
+import {Footer} from '@components/organisms/Footer/Footer.tsx';
 
 
 export default function App() {
