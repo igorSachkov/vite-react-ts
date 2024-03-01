@@ -157,6 +157,10 @@ body {
   cursor: pointer;
 }
 
+.w-50 {
+  width: 50%;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

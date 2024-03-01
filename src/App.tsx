@@ -9,6 +9,7 @@ import {MainPage} from '@components/pages/TaskLandingPage/MainPage.tsx';
 import {BlogPage} from '@components/pages/BlogPage/BlogPage.tsx';
 import {BlogItemPage} from '@components/pages/BlogItemPage/BlogItemPage.tsx';
 import {Footer} from '@components/organisms/Footer/Footer.tsx';
+import {MarginDivider} from '@components/atoms/margin-divider/MarginDivider.tsx';
 
 
 export default function App() {
@@ -27,9 +28,9 @@ export default function App() {
           </Routes>
         </main>
 
-        <div style={{marginTop: '12rem'}}>
+        <MarginDivider $marginTop={'12rem'}>
           <Footer/>
-        </div>
+        </MarginDivider>
       </Provider>
     </BrowserRouter>
   );

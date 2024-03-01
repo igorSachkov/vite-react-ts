@@ -26,13 +26,15 @@
     position: relative;
 
     .progress {
-      background-color: #d8d8d8;
+      background-color: $primary-color;
       width: 100%;
       height: 100%;
       opacity: .2;
     }
 
     .progressDone {
+      background-color: $primary-color;
+      width: 28%;
       position: absolute;
       height: 100%;
       left: 0;

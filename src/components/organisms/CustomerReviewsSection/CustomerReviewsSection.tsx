@@ -28,7 +28,7 @@ export const CustomerReviewsSection = () => {
       <h2 className={'poppins-700'}><span className={'primary-text'}>Customer</span> Say</h2>
       <div className={style.reviewsContainer}>
         {!comments.length ?
-          <h4 style={{textAlign: 'center', fontSize: '3rem'}}>Loading...</h4> :
+          <h4 className={style.loading}>Loading...</h4> :
           <CustomerReviewSlider comments={comments}/>}
       </div>
     </section>

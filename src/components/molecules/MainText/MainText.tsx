@@ -11,7 +11,7 @@ export const MainText = () => {
       </div>
 
       <h1 className={`poppins-600 ${style.mainTitle}`}>Enjoy Foods All Over The <span className={style.secondary}>World</span></h1>
-      <p className={style.mainText}>EatLy help you set saving goals, earn cash back offers, Go to disclaimer for more details and get paychecks up to two days early. Get a <span style={{color: '#6155AE'}}>$20 bonus</span>.</p>
+      <p className={style.mainText}>EatLy help you set saving goals, earn cash back offers, Go to disclaimer for more details and get paychecks up to two days early. Get a <span className={style.bonuses}>$20 bonus</span>.</p>
 
       <div className={`d-flex ${style.buttonContainer}`}>
         <LandingButton isPrimary={true}><span>Get Started</span></LandingButton>

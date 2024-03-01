@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 export const CustomerReviewSlider = ({comments}: ISliderCustomerProps) => {
   const [activeSlider, setActiveSlider] = useState(0);
   const slicedArray = comments.slice(activeSlider, -1);
-  /** Не продумал, пока, как это должно работать */
+
   return (
     <div className={style.sliderContainer}>
       <div>
@@ -22,8 +22,8 @@ export const CustomerReviewSlider = ({comments}: ISliderCustomerProps) => {
 
         <div className={style.progressContainer}>
           {/*заглушка*/}
-          <div className={style.progress} style={{backgroundColor: '#6C5FBC'}}></div>
-          <div className={style.progressDone} style={{backgroundColor: '#6C5FBC', width: '28%'}}></div>
+          <div className={style.progress}></div>
+          <div className={style.progressDone}></div>
         </div>
       </div>
 
