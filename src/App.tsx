@@ -5,7 +5,7 @@ import store from '@redux/store/store.ts';
 import ScrollToAnchor from '@components/molecules/ScrollToAnchor/ScrollToAnchor.tsx';
 import {ErrorPage} from '@components/pages/ErrorPage/ErrorPage.tsx';
 import {Header} from '@components/organisms/Header/Header.tsx';
-import {MainPage} from '@components/pages/TaskLandingPage/MainPage.tsx';
+import {MainPage} from '@components/pages/MainPage/MainPage.tsx';
 import {BlogPage} from '@components/pages/BlogPage/BlogPage.tsx';
 import {BlogItemPage} from '@components/pages/BlogItemPage/BlogItemPage.tsx';
 import {Footer} from '@components/organisms/Footer/Footer.tsx';

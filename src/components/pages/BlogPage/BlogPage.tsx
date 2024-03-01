@@ -5,6 +5,7 @@ import {BlogItem} from '@components/organisms/BlogItem/BlogItem.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {cachedRestBlogService} from '@services/cache-service.ts';
+import {ErrorMessage} from '@components/molecules/ErrorMessage/ErrorMessage.tsx';
 
 
 interface IBlogPagination {
@@ -26,6 +27,7 @@ export const BlogPage = () => {
 
   const [isLoading, setLoading] = useState(false);
   const [posts, setPosts] = useState<IPost[]>([]);
+  const [isError, setError] = useState<boolean>(false);
 
   function loadData(limit: number, skip: number) {
     setLoading(true);
@@ -37,9 +39,11 @@ export const BlogPage = () => {
           pages: Math.max(answer.total / blogNav.perPage),
         }));
         setPosts(answer.posts);
+        setError(false);
       })
       .catch(((err: string) => {
         console.warn(err, 'err');
+        setError(true);
       }))
       .finally(() => {
         setLoading(false);
@@ -70,9 +74,11 @@ export const BlogPage = () => {
   return (
     <div className={style.sectionContainer}>
       <h2 className={`poppins-600 ${style.title}`}>Latest <span className={'primary-text'}>Articles</span></h2>
-      <div className={style.blogContainer}>
-        {posts.map(item => <BlogItem {...item} key={item.id} isLoading={isLoading}/>)}
-      </div>
+      {isError ? <ErrorMessage/> :
+        <div className={style.blogContainer}>
+          {posts.map(item => <BlogItem {...item} key={item.id} isLoading={isLoading}/>)}
+        </div>}
+
       <div className={style.pagination}>
         <button className={isBackDisabled() ? '' : 'pointer'} disabled={isBackDisabled()} onClick={() => backClick()}>
           <ArrowBackIcon/>

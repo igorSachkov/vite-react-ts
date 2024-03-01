@@ -10,6 +10,7 @@ import {LandingButton} from '@components/molecules/LandingButton/LandingButton.t
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {CustomerReviewCard} from '@components/organisms/CustomerReviewCard/CustomerReviewCard.tsx';
 import {AddComment} from '@components/organisms/AddComment/AddComment.tsx';
+import {ErrorMessage} from '@components/molecules/ErrorMessage/ErrorMessage.tsx';
 
 export const BlogItemPage = () => {
   const params: Readonly<Partial<IBlogItemParams>> = useParams<Partial<IBlogItemParams>>();
@@ -17,6 +18,7 @@ export const BlogItemPage = () => {
   const [user, setUser] = useState<UserForBlog>();
   const [comments, setComments] = useState<IComment[]>([]);
   const navigate = useNavigate();
+  const [isError, setError] = useState<boolean>(false);
 
   function addComment(comment: IComment): void {
     setComments([...comments, comment]);
@@ -28,7 +30,7 @@ export const BlogItemPage = () => {
     }
 
     try {
-      const usersField: (keyof IUser)[]= ['firstName', 'lastName', 'image'];
+      const usersField: (keyof IUser)[] = ['firstName', 'lastName', 'image'];
       const post: IPost = await restBlogService.getItem(params.id);
       const userPromise: Promise<UserForBlog> = restUserService.getItem(`${post.userId}`, usersField);
       const commentPromise: Promise<ICommentsServerAnswer> = restCommentsService.getAllCommentsByPostId(post.id);
@@ -37,9 +39,11 @@ export const BlogItemPage = () => {
       setBlog(post);
       userResult.status === 'fulfilled' && setUser(userResult.value);
       commentsResult.status === 'fulfilled' && setComments(commentsResult.value?.comments);
+      setError(false);
 
     } catch (err) {
       console.warn('Ошибка загрузки данных!', err);
+      setError(true);
     }
 
   }
@@ -58,34 +62,39 @@ export const BlogItemPage = () => {
   } else {
     return (
       <div className={`container ${style.sectionContainer}`}>
-        <div className={style.blogItemContainer}>
-          <h4 className={`poppins-600 ${style.title}`}>{blog.title}</h4>
-          <div className={style.topInfo}>
-            <img className={style.avatar} src={user?.image} alt="users avatar"/>
-            <div className={style.user}>
-              <div className={`poppins-400 ${style.subtitle}`}>Written By</div>
-              <h5 className={'poppins-500'}>{user?.firstName} {user?.lastName}</h5>
+        {isError ? <ErrorMessage/> :
+          <>
+            <div className={style.blogItemContainer}>
+              <h4 className={`poppins-600 ${style.title}`}>{blog.title}</h4>
+              <div className={style.topInfo}>
+                <img className={style.avatar} src={user?.image} alt="users avatar"/>
+                <div className={style.user}>
+                  <div className={`poppins-400 ${style.subtitle}`}>Written By</div>
+                  <h5 className={'poppins-500'}>{user?.firstName} {user?.lastName}</h5>
+                </div>
+                <div>
+                  <Rating reactions={blog.reactions}/>
+                  <Tags tags={blog.tags}/>
+                </div>
+              </div>
+              <p className={`poppins-400 ${style.text}`}>{blog.body}</p>
             </div>
-            <div>
-              <Rating reactions={blog.reactions}/>
-              <Tags tags={blog.tags}/>
+
+            <div className={style.buttonBlock}>
+              <LandingButton onClick={navBack}>
+                <ArrowBackIcon className={style.icon}></ArrowBackIcon><span>All Articles</span>
+              </LandingButton>
             </div>
-          </div>
-          <p className={`poppins-400 ${style.text}`}>{blog.body}</p>
-        </div>
 
-        <div className={style.buttonBlock}>
-          <LandingButton onClick={navBack}>
-            <ArrowBackIcon className={style.icon}></ArrowBackIcon><span>All Articles</span>
-          </LandingButton>
-        </div>
+            <div className={style.commentsContainer}>
+              {comments.map(comment => <CustomerReviewCard body={comment.body} user={comment.user} key={comment.id} isActive={true}/>)}
+            </div>
+            <div className={style.commentContainer}>
+              <AddComment addComment={addComment}/>
+            </div>
+          </>
+        }
 
-        <div className={style.commentsContainer}>
-          {comments.map(comment => <CustomerReviewCard body={comment.body} user={comment.user} key={comment.id} isActive={true}/>)}
-        </div>
-        <div className={style.commentContainer}>
-          <AddComment addComment={addComment}/>
-        </div>
 
       </div>
     );

@@ -3,7 +3,7 @@ import star from '@assets/star.png';
 import {IRecipe} from '@models/dummy-rest-model.ts';
 
 
-export const RecipeItem = (props: IRecipe) => {
+export const RecipeItem = (props: Partial<IRecipe>) => {
   return (
     <div className={style.recipeItem}>
       <img className={style.recipeImage} src={props.image} alt="recipe image"/>
