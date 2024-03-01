@@ -12,6 +12,14 @@
   display: flex;
   align-items: center;
   transition: .4s ease-in-out filter;
+  transition: .1s ease-in-out box-shadow;
+
+  &:hover {
+    transform: translateY(-.1rem);
+    box-shadow: 0px 3px 5px 1px rgba(181,177,177,0.53);
+    -webkit-box-shadow: 0px 3px 5px 1px rgba(181,177,177,0.53);
+    -moz-box-shadow: 0px 3px 5px 1px rgba(181,177,177,0.53);
+  }
 
   span {
     margin: 0 1.5rem;

@@ -11,6 +11,14 @@ $recipeGrey: #8E97A6;
   -webkit-box-shadow: 1px 46px 31px 4px rgba(34, 60, 80, 0.14);
   -moz-box-shadow: 1px 46px 31px 4px rgba(34, 60, 80, 0.14);
   box-shadow: 1px 46px 31px 4px rgba(34, 60, 80, 0.14);
+  transition: box-shadow ease-in-out .2s;
+
+  &:hover {
+    transform: translateY(-.2rem);
+    -webkit-box-shadow: 1px 46px 31px 4px rgba(34, 60, 80, 0.25);
+    -moz-box-shadow: 1px 46px 31px 4px rgba(34, 60, 80, 0.25);
+    box-shadow: 1px 46px 31px 4px rgba(34, 60, 80, 0.25);
+  }
 
   .type {
     font-size: 1.1rem;

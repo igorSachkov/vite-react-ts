@@ -15,6 +15,7 @@
     font-size: 1.8rem;
     line-height: 2rem;
     color: #252525;
+    transition: .3s ease-in-out color;
   }
 
   .info {
@@ -39,7 +40,20 @@
       overflow: hidden;
       hyphens: manual;
       word-break: keep-all;
+      transition: .3s ease-in-out color;
     }
 
+  }
+}
+
+.blocked {
+  cursor: default;
+
+  h3 {
+    color: $second-text;
+  }
+
+  .body p {
+    color: $second-text;
   }
 }

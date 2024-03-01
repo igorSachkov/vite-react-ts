@@ -5,14 +5,14 @@ import {Rating} from '@components/atoms/Rating/Rating.tsx';
 import {Tags} from '@components/molecules/Tags/Tags.tsx';
 
 
-export const BlogItem = ({title, tags, reactions, body, id}: IPost) => {
+export const BlogItem = ({title, tags, reactions, body, id, isLoading}: IPost) => {
   const navigate = useNavigate();
   function openItem() {
     navigate('/blog-item' + `/${id}`);
   }
 
   return (
-    <div className={style.blog} onClick={() => openItem()}>
+    <div className={`${style.blog} ${isLoading && style.blocked}`} onClick={() => !isLoading && openItem()}>
       <h3 className={'poppins-600'}>{title}</h3>
       <div className={style.info}>
         <Tags tags={tags}/>

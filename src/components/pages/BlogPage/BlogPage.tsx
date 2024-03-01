@@ -71,7 +71,7 @@ export const BlogPage = () => {
     <div className={style.sectionContainer}>
       <h2 className={`poppins-600 ${style.title}`}>Latest <span className={'primary-text'}>Articles</span></h2>
       <div className={style.blogContainer}>
-        {posts.map(item => <BlogItem {...item} key={item.id}/>)}
+        {posts.map(item => <BlogItem {...item} key={item.id} isLoading={isLoading}/>)}
       </div>
       <div className={style.pagination}>
         <button className={isBackDisabled() ? '' : 'pointer'} disabled={isBackDisabled()} onClick={() => backClick()}>
