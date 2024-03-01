@@ -29,7 +29,7 @@ export interface IPost {
   userId: number;
   tags: string[];
   reactions: number;
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 export interface IComment {
