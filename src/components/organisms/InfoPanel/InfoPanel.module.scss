@@ -16,7 +16,7 @@
 .infoPanel {
   width: 100%;
   // Понимание есть, что можно сделать bg-color и кривыми Безье, а вот времени и навыка- нет.
-  background: center / contain no-repeat $secondary-color url("../../assets/infoPanelBG.png");
+  background: center / contain no-repeat $secondary-color url("../../../assets/infoPanelBG.png");
 }
 
 .divider {
